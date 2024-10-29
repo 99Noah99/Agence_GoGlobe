@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('train', function (Blueprint $table) {
+        Schema::create('TRANSPORT__train', function (Blueprint $table) {
             $table->integer('Id_Train')->primary();
             $table->time('Heure_depart')->nullable();
             $table->time('Heure_arriver')->nullable();

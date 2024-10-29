@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('type_payement', function (Blueprint $table) {
+        Schema::create('PAYEMENT__type_payement', function (Blueprint $table) {
             $table->integer('Id_Type_Payement')->primary();
             $table->string('Intitule', 50)->nullable();
         });

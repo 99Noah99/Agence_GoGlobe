@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('payement', function (Blueprint $table) {
+        Schema::create('PAYEMENT__payement', function (Blueprint $table) {
             $table->integer('Id_Payement')->primary();
             $table->integer('Date_creation')->nullable();
             $table->decimal('Prix', 7, 2)->nullable();
