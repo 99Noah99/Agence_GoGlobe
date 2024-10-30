@@ -15,7 +15,7 @@ return new class extends Migration
 
         Schema::create('LOCALISATION__region', function (Blueprint $table) {
             $table->integer('Id_Region')->primary();
-            $table->string('Nom', 50)->nullable();
+            $table->string('Nom', 50);
             $table->integer('Id_Pays');
             $table->foreign('Id_Pays')->references('Id_Pays')->on('pays');
         });

@@ -15,9 +15,9 @@ return new class extends Migration
 
         Schema::create('TRANSPORT__deplacer_moyen_transport', function (Blueprint $table) {
             $table->integer('Id_Deplacement')->primary()->autoIncrement();
-            $table->integer('Id_Transport')->nullable();
+            $table->integer('Id_Transport');
             $table->foreign('Id_Transport')->references('Id_Transport')->on('moyen_transport');
-            $table->integer('Id_Forfait')->nullable();
+            $table->integer('Id_Forfait');
             $table->foreign('Id_Forfait')->references('Id_Forfait')->on('forfait');
         });
 

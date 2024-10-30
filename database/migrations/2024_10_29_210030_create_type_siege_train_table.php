@@ -15,7 +15,7 @@ return new class extends Migration
 
         Schema::create('type_siege_train', function (Blueprint $table) {
             $table->integer('Id_Type_Siege_Train')->primary();
-            $table->string('Categorie', 50)->nullable();
+            $table->string('Categorie', 50);
         });
 
         Schema::enableForeignKeyConstraints();

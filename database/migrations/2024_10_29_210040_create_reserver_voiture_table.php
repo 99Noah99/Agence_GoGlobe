@@ -15,14 +15,14 @@ return new class extends Migration
 
         Schema::create('reserver_voiture', function (Blueprint $table) {
             $table->integer('Id_Reservation_Voiture')->primary()->autoIncrement();
-            $table->integer('Id_Client')->nullable();
+            $table->integer('Id_Client');
             $table->foreign('Id_Client')->references('Id_Client')->on('client');
-            $table->integer('Id_Facture')->nullable();
+            $table->integer('Id_Facture');
             $table->foreign('Id_Facture')->references('Id_Facture')->on('facture');
-            $table->integer('Id_Voiture')->nullable();
+            $table->integer('Id_Voiture');
             $table->foreign('Id_Voiture')->references('Id_Voiture')->on('voiture');
-            $table->date('Date_debut_reservation_voiture')->nullable();
-            $table->date('Date_fin_reservation_voiture')->nullable();
+            $table->date('Date_debut_reservation_voiture');
+            $table->date('Date_fin_reservation_voiture');
         });
 
         Schema::enableForeignKeyConstraints();

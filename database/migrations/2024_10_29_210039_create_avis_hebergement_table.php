@@ -15,9 +15,9 @@ return new class extends Migration
 
         Schema::create('AVIS__avis_hebergement', function (Blueprint $table) {
             $table->integer('Id_Avis_Hebergement')->primary();
-            $table->text('Commentaire')->nullable();
-            $table->date('Date_avis')->nullable();
-            $table->integer('Note_avis')->nullable();
+            $table->text('Commentaire');
+            $table->date('Date_avis');
+            $table->integer('Note_avis');
             $table->integer('Id_Hebergement');
             $table->foreign('Id_Hebergement')->references('Id_Hebergement')->on('hebergement');
             $table->integer('Id_Client');

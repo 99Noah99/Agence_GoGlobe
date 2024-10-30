@@ -15,10 +15,10 @@ return new class extends Migration
 
         Schema::create('TRANSPORT__bus', function (Blueprint $table) {
             $table->integer('Id_Bus')->primary();
-            $table->time('Heure_depart')->nullable();
-            $table->time('Heure_arriver')->nullable();
-            $table->date('Date_depart')->nullable();
-            $table->date('Date_arriver')->nullable();
+            $table->time('Heure_depart');
+            $table->time('Heure_arriver');
+            $table->date('Date_depart');
+            $table->date('Date_arriver');
             $table->integer('Id_Ville_Depart');
             $table->foreign('Id_Ville_Depart')->references('Id_Ville')->on('ville');
             $table->integer('Id_Ville_Arriver');

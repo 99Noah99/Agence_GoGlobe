@@ -15,13 +15,13 @@ return new class extends Migration
 
         Schema::create('users', function (Blueprint $table) {
             $table->integer('Id_User')->primary();
-            $table->string('Nom', 25)->nullable();
-            $table->string('Prenom', 25)->nullable();
-            $table->string('Email', 150)->nullable();
+            $table->string('Nom', 25);
+            $table->string('Prenom', 25);
+            $table->string('Email', 150);
             $table->string('Numero_tel', 15)->nullable();
-            $table->string('username', 50)->nullable();
-            $table->string('password', 50)->nullable();
-            $table->string('Role', 50)->nullable();
+            $table->string('username', 50);
+            $table->string('password', 50);
+            $table->string('Role', 50);
         });
 
         Schema::enableForeignKeyConstraints();

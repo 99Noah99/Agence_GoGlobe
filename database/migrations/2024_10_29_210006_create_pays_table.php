@@ -15,7 +15,7 @@ return new class extends Migration
 
         Schema::create('LOCALISATION__pays', function (Blueprint $table) {
             $table->integer('Id_Pays')->primary();
-            $table->string('Nom', 50)->nullable();
+            $table->string('Nom', 50);
         });
 
         Schema::enableForeignKeyConstraints();

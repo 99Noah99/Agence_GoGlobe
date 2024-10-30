@@ -15,8 +15,8 @@ return new class extends Migration
 
         Schema::create('PAYEMENT__payement', function (Blueprint $table) {
             $table->integer('Id_Payement')->primary();
-            $table->integer('Date_creation')->nullable();
-            $table->decimal('Prix', 7, 2)->nullable();
+            $table->integer('Date_creation');
+            $table->decimal('Prix', 7, 2);
             $table->integer('Id_Type_Payement');
             $table->foreign('Id_Type_Payement')->references('Id_Type_Payement')->on('type_payement');
             $table->integer('Id_Statut_Payement');

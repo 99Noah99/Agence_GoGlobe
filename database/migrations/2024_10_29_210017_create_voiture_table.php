@@ -15,11 +15,11 @@ return new class extends Migration
 
         Schema::create('TRANSPORT__voiture', function (Blueprint $table) {
             $table->integer('Id_Voiture')->primary();
-            $table->string('Marque', 50)->nullable();
-            $table->string('Modele', 50)->nullable();
-            $table->string('Puissance', 50)->nullable();
-            $table->decimal('Prix', 5, 2)->nullable();
-            $table->binary('Image')->nullable();
+            $table->string('Marque', 50);
+            $table->string('Modele', 50);
+            $table->string('Puissance', 50);
+            $table->decimal('Prix', 5, 2);
+            $table->string('Image', 255);
         });
 
         Schema::enableForeignKeyConstraints();

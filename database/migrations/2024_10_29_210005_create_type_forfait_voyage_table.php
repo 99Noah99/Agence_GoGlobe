@@ -15,7 +15,7 @@ return new class extends Migration
 
         Schema::create('type_forfait_voyage', function (Blueprint $table) {
             $table->integer('Id_Type_Forfait_Voyage')->primary();
-            $table->string('Nom', 50)->nullable();
+            $table->string('Nom', 50);
         });
 
         Schema::enableForeignKeyConstraints();

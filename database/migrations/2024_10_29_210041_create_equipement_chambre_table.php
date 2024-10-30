@@ -15,9 +15,9 @@ return new class extends Migration
 
         Schema::create('equipement_chambre', function (Blueprint $table) {
             $table->integer('Id_Equipement_Chambre')->nullable()->autoIncrement();
-            $table->integer('Id_Chambre')->nullable();
+            $table->integer('Id_Chambre');
             $table->foreign('Id_Chambre')->references('Id_Chambre')->on('chambre');
-            $table->integer('Id_Equipement')->nullable();
+            $table->integer('Id_Equipement');
             $table->foreign('Id_Equipement')->references('Id_Equipement')->on('equipement');
         });
 

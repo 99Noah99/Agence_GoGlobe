@@ -15,7 +15,7 @@ return new class extends Migration
 
         Schema::create('client', function (Blueprint $table) {
             $table->integer('Id_Client')->primary();
-            $table->date('Date_creation_compte')->nullable();
+            $table->date('Date_creation_compte');
             $table->string('Moyen_transport_pref', 50)->nullable();
             $table->string('Type_herbergement_pref', 50)->nullable();
             $table->integer('Id_Categorie_Client_Forfait');

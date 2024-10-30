@@ -15,7 +15,7 @@ return new class extends Migration
 
         Schema::create('LOCALISATION__ville', function (Blueprint $table) {
             $table->integer('Id_Ville')->primary();
-            $table->string('Nom', 50)->nullable();
+            $table->string('Nom', 50);
             $table->integer('Id_Region');
             $table->foreign('Id_Region')->references('Id_Region')->on('region');
         });

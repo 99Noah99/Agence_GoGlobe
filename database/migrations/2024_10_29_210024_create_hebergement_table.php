@@ -15,8 +15,8 @@ return new class extends Migration
 
         Schema::create('hebergement', function (Blueprint $table) {
             $table->integer('Id_Hebergement')->primary();
-            $table->string('Nom', 50)->nullable();
-            $table->text('Description')->nullable();
+            $table->string('Nom', 50);
+            $table->text('Description');
             $table->integer('Id_Ville');
             $table->foreign('Id_Ville')->references('Id_Ville')->on('ville');
             $table->integer('Id_Type_Hebergement');

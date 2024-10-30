@@ -15,7 +15,7 @@ return new class extends Migration
 
         Schema::create('PAYEMENT__type_payement', function (Blueprint $table) {
             $table->integer('Id_Type_Payement')->primary();
-            $table->string('Intitule', 50)->nullable();
+            $table->string('Intitule', 50);
         });
 
         Schema::enableForeignKeyConstraints();

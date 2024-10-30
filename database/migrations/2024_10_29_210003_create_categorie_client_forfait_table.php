@@ -15,7 +15,7 @@ return new class extends Migration
 
         Schema::create('categorie_client_forfait', function (Blueprint $table) {
             $table->integer('Id_Categorie_Client_Forfait')->primary();
-            $table->string('Type', 50)->nullable();
+            $table->string('Type', 50);
         });
 
         Schema::enableForeignKeyConstraints();

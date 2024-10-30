@@ -15,8 +15,8 @@ return new class extends Migration
 
         Schema::create('etape_itineraire', function (Blueprint $table) {
             $table->integer('Id_Itineraire')->primary();
-            $table->string('Titre', 50)->nullable();
-            $table->integer('Rang')->nullable();
+            $table->string('Titre', 50);
+            $table->integer('Rang');
             $table->integer('Id_Forfait');
             $table->foreign('Id_Forfait')->references('Id_Forfait')->on('forfait');
         });

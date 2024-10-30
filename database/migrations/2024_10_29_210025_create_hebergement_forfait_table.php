@@ -15,9 +15,9 @@ return new class extends Migration
 
         Schema::create('hebergement_forfait', function (Blueprint $table) {
             $table->integer('Id_Avoir_Hebergement')->primary()->autoIncrement();
-            $table->integer('Id_Forfait')->nullable();
+            $table->integer('Id_Forfait');
             $table->foreign('Id_Forfait')->references('Id_Forfait')->on('forfait');
-            $table->integer('Id_Hebergement')->nullable();
+            $table->integer('Id_Hebergement');
             $table->foreign('Id_Hebergement')->references('Id_Hebergement')->on('hebergement');
         });
 

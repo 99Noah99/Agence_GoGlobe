@@ -15,7 +15,7 @@ return new class extends Migration
 
         Schema::create('BILLET__billet_bus', function (Blueprint $table) {
             $table->integer('Id_Billet_Bus')->primary();
-            $table->decimal('Prix', 5, 2)->nullable();
+            $table->decimal('Prix', 5, 2);
             $table->integer('Id_Facture')->unique();
             $table->integer('Id_Client');
             $table->integer('Id_Bus');

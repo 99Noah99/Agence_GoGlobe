@@ -15,9 +15,9 @@ return new class extends Migration
 
         Schema::create('forfait', function (Blueprint $table) {
             $table->integer('Id_Forfait')->primary();
-            $table->string('Intitule', 200)->nullable();
-            $table->integer('Duree')->nullable();
-            $table->decimal('Prix', 7, 2)->nullable();
+            $table->string('Intitule', 200);
+            $table->integer('Duree');
+            $table->decimal('Prix', 7, 2);
             $table->integer('Id_Categorie_Client_Forfait');
             $table->foreign('Id_Categorie_Client_Forfait')->references('Id_Categorie_Client_Forfait')->on('categorie__client_forfait');
             $table->integer('Id_Type_Forfait_Voyage');

@@ -15,7 +15,7 @@ return new class extends Migration
 
         Schema::create('equipement', function (Blueprint $table) {
             $table->integer('Id_Equipement')->primary();
-            $table->string('Intitule', 100)->nullable();
+            $table->string('Intitule', 100);
         });
 
         Schema::enableForeignKeyConstraints();

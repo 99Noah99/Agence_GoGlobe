@@ -15,7 +15,7 @@ return new class extends Migration
 
         Schema::create('TRANSPORT__moyen_transport', function (Blueprint $table) {
             $table->integer('Id_Transport')->primary();
-            $table->string('Nom_mode_transport', 50)->nullable();
+            $table->string('Nom_mode_transport', 50);
         });
 
         Schema::enableForeignKeyConstraints();

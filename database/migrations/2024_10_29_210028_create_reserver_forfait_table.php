@@ -17,16 +17,16 @@ return new class extends Migration
             $table->integer('Id_Reservation_Forfait')->primary()->autoIncrement();
             $table->integer('Id_Forfait');
             $table->foreign('Id_Forfait')->references('Id_Forfait')->on('forfait');
-            $table->integer('Id_Transport')->nullable();
+            $table->integer('Id_Transport');
             $table->foreign('Id_Transport')->references('Id_Transport')->on('moyen_transport');
-            $table->integer('Id_Client')->nullable();
+            $table->integer('Id_Client');
             $table->foreign('Id_Client')->references('Id_Client')->on('client');
-            $table->integer('Id_Hebergement')->nullable();
+            $table->integer('Id_Hebergement');
             $table->foreign('Id_Hebergement')->references('Id_Hebergement')->on('hebergement');
-            $table->integer('Id_Facture')->nullable();
+            $table->integer('Id_Facture');
             $table->foreign('Id_Facture')->references('Id_Facture')->on('facture');
-            $table->date('Date_debut')->nullable();
-            $table->date('Date_fin')->nullable();
+            $table->date('Date_debut');
+            $table->date('Date_fin');
         });
 
         Schema::enableForeignKeyConstraints();
