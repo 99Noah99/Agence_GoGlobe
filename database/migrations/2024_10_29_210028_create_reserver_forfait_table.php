@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('reserver_forfait', function (Blueprint $table) {
+        Schema::create('RESERVATION__reserver_forfait', function (Blueprint $table) {
             $table->integer('Id_Reservation_Forfait')->primary()->autoIncrement();
             $table->integer('Id_Forfait');
             $table->foreign('Id_Forfait')->references('Id_Forfait')->on('forfait');

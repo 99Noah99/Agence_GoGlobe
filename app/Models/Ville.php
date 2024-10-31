@@ -10,12 +10,8 @@ class Ville extends Model
     use HasFactory;
     protected $table = 'localisation__ville';
     protected $primaryKey = 'Id_Ville';
-    public $timestamps = false;
 
-    protected $fillable = [
-        'Nom',
-        // Autres colonnes...
-    ];
+    protected $guarded = [];
 
     public function trainsDepart()
     {

@@ -11,11 +11,8 @@ class Personnel extends Model
 
     protected $table = 'personnel';
     protected $primaryKey = 'Id_Personnel';
-    public $timestamps = false;
 
-    protected $fillable = [
-        'Id_User',
-    ];
+    protected $guarded = [];
 
     public function user()
     {

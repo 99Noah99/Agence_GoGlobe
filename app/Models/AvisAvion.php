@@ -6,17 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class AvisAvion extends Model
 {
-    protected $table = 'AVIS__avis_avion';
+    protected $table = 'avis__avis_avion';
     protected $primaryKey = 'Id_Avis_Avion';
-    public $timestamps = false;
 
-    protected $fillable = [
-        'Note',
-        'Commentaire',
-        'Date_avis',
-        'Id_Avion',
-        'Id_Client',
-    ];
+    protected $guarded = [];
 
     public function avion()
     {

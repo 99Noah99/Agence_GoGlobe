@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('reserver_voiture', function (Blueprint $table) {
+        Schema::create('RESERVATION__reserver_voiture', function (Blueprint $table) {
             $table->integer('Id_Reservation_Voiture')->primary()->autoIncrement();
             $table->integer('Id_Client');
             $table->foreign('Id_Client')->references('Id_Client')->on('client');

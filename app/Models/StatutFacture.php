@@ -10,11 +10,8 @@ class StatutFacture extends Model
     use HasFactory;
     protected $table = 'payement__statut_facture';
     protected $primaryKey = 'Id_Statut_Facture';
-    public $timestamps = false;
 
-    protected $fillable = [
-        'Libelle',
-    ];
+    protected $guarded = [];
 
     public function factures()
     {

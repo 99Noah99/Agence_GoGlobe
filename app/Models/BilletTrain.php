@@ -10,14 +10,8 @@ class BilletTrain extends Model
     use HasFactory;
     protected $table = 'billet__billet_train';
     protected $primaryKey = 'Id_Billet_Train';
-    public $timestamps = false;
 
-    protected $fillable = [
-        'Prix',
-        'Id_Facture',
-        'Id_Client',
-        'Id_Train',
-    ];
+    protected $guarded = [];
 
     public function client()
     {

@@ -6,9 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class AvisForfait extends Model
 {
-    protected $table = 'AVIS__avis_forfait';
+    protected $table = 'avis__avis_forfait';
     protected $primaryKey = 'Id_Avis_Forfait';
-    public $timestamps = false;
 
     protected $guarded = [];
 

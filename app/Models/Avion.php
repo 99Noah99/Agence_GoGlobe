@@ -6,18 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Avion extends Model
 {
-    protected $table = 'TRANSPORT__avion';
+    protected $table = 'transport__avion';
     protected $primaryKey = 'Id_Avion';
-    public $timestamps = false;
 
-    protected $fillable = [
-        'Heure_depart',
-        'Heure_arriver',
-        'Date_depart',
-        'Date_arriver',
-        'Id_Ville_Depart',
-        'Id_Ville_Arriver',
-    ];
+    protected $guarded = []; // aucune colonne protégée, permet la création 
 
     public function villeDepart()
     {

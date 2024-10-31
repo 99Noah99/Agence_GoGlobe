@@ -11,14 +11,8 @@ class BilletBus extends Model
 
     protected $table = 'billet__billet_bus';
     protected $primaryKey = 'Id_Billet_Bus';
-    public $timestamps = false;
 
-    protected $fillable = [
-        'Prix',
-        'Id_Facture',
-        'Id_Client',
-        'Id_Bus',
-    ];
+    protected $guarded = [];
 
     public function client()
     {

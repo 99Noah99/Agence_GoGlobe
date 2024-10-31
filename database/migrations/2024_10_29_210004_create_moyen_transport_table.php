@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::disableForeignKeyConstraints();
 
         Schema::create('TRANSPORT__moyen_transport', function (Blueprint $table) {
-            $table->integer('Id_Transport')->primary();
+            $table->integer('Id_Moyen_Transport')->primary();
             $table->string('Nom_mode_transport', 50);
             $table->timestamps();
         });

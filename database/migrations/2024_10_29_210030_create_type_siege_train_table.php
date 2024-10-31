@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('type_siege_train', function (Blueprint $table) {
+        Schema::create('TYPE__type_siege_train', function (Blueprint $table) {
             $table->integer('Id_Type_Siege_Train')->primary();
             $table->string('Categorie', 50);
             $table->timestamps();

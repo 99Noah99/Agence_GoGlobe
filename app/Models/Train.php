@@ -10,16 +10,8 @@ class Train extends Model
     use HasFactory;
     protected $table = 'transport__train';
     protected $primaryKey = 'Id_Train';
-    public $timestamps = false;
 
-    protected $fillable = [
-        'Heure_depart',
-        'Heure_arriver',
-        'Date_depart',
-        'Date_arriver',
-        'Id_Ville_Depart',
-        'Id_Ville_Arriver',
-    ];
+    protected $guarded = [];
 
     public function villeDepart()
     {

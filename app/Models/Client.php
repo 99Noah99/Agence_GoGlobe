@@ -10,15 +10,8 @@ class Client extends Model
     use HasFactory;
     protected $table = 'client';
     protected $primaryKey = 'Id_Client';
-    public $timestamps = false;
 
-    protected $fillable = [
-        'Date_creation_compte',
-        'Moyen_transport_pref',
-        'Type_hebergement_pref',
-        'Id_Categorie_Client_Forfait',
-        'Id_User',
-    ];
+    protected $guarded = [];
 
     public function billet_bus()
     {
