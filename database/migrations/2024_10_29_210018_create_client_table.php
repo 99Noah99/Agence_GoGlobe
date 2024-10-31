@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('Id_Categorie_Client_Forfait');
             $table->foreign('Id_Categorie_Client_Forfait')->references('Id_Categorie_Client_Forfait')->on('categorie__client_forfait');
             $table->integer('Id_User')->unique();
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

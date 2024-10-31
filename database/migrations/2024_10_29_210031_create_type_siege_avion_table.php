@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('type_siege_avion', function (Blueprint $table) {
             $table->integer('Id_Type_Siege_Avion')->primary();
             $table->string('Categorie', 50);
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

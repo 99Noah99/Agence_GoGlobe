@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('Id_Bus');
             $table->foreign('Id_Client')->references('Id_Client')->on('client');
             $table->foreign('Id_Bus')->references('Id_Bus')->on('bus');
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

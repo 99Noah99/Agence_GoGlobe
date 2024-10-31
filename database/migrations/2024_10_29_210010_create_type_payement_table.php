@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('PAYEMENT__type_payement', function (Blueprint $table) {
             $table->integer('Id_Type_Payement')->primary();
             $table->string('Intitule', 50);
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

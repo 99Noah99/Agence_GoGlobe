@@ -23,6 +23,7 @@ return new class extends Migration
             $table->foreign('Id_Voiture')->references('Id_Voiture')->on('voiture');
             $table->date('Date_debut_reservation_voiture');
             $table->date('Date_fin_reservation_voiture');
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

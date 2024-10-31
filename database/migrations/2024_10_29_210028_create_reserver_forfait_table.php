@@ -27,6 +27,7 @@ return new class extends Migration
             $table->foreign('Id_Facture')->references('Id_Facture')->on('facture');
             $table->date('Date_debut');
             $table->date('Date_fin');
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

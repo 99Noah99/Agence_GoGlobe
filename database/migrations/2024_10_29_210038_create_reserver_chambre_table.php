@@ -23,6 +23,7 @@ return new class extends Migration
             $table->foreign('Id_Facture')->references('Id_Facture')->on('facture');
             $table->date('Date_debut_reservation_chambre');
             $table->date('Date_fin_reservation_chambre');
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

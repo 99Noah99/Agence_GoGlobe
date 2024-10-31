@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('PAYEMENT__statut_facture', function (Blueprint $table) {
             $table->integer('Id_Statut_Facture')->primary();
             $table->string('Intitule', 50);
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

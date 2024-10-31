@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreign('Id_Ville')->references('Id_Ville')->on('ville');
             $table->integer('Id_Type_Hebergement');
             $table->foreign('Id_Type_Hebergement')->references('Id_Type_Hebergement')->on('type_hebergement');
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('Id_Personnel')->primary();
             $table->integer('Id_User')->unique();
             $table->foreign('Id_User')->references('Id_User')->on('users');
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

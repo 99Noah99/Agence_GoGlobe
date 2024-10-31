@@ -23,6 +23,7 @@ return new class extends Migration
             $table->foreign('Id_Statut_Payement')->references('Id_Statut_Payement')->on('statut_payement');
             $table->integer('Id_Facture');
             $table->foreign('Id_Facture')->references('Id_Facture')->on('facture');
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

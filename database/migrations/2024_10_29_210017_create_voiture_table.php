@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('Puissance', 50);
             $table->decimal('Prix', 5, 2);
             $table->string('Image', 255);
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

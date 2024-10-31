@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('username', 50);
             $table->string('password', 50);
             $table->string('Role', 50);
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

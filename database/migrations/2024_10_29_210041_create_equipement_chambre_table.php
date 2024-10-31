@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreign('Id_Chambre')->references('Id_Chambre')->on('chambre');
             $table->integer('Id_Equipement');
             $table->foreign('Id_Equipement')->references('Id_Equipement')->on('equipement');
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

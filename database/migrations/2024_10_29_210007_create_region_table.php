@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('Nom', 50);
             $table->integer('Id_Pays');
             $table->foreign('Id_Pays')->references('Id_Pays')->on('pays');
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

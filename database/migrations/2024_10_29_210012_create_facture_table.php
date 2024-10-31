@@ -21,6 +21,7 @@ return new class extends Migration
             $table->date('Date_creation');
             $table->integer('Id_Statut_Facture');
             $table->foreign('Id_Statut_Facture')->references('Id_Statut_Facture')->on('statut_facture');
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

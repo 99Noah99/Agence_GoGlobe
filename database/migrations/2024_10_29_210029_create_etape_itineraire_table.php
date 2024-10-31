@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('Rang');
             $table->integer('Id_Forfait');
             $table->foreign('Id_Forfait')->references('Id_Forfait')->on('forfait');
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreign('Id_Forfait')->references('Id_Forfait')->on('forfait');
             $table->integer('Id_Hebergement');
             $table->foreign('Id_Hebergement')->references('Id_Hebergement')->on('hebergement');
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

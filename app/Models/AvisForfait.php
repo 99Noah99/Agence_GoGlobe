@@ -10,13 +10,7 @@ class AvisForfait extends Model
     protected $primaryKey = 'Id_Avis_Forfait';
     public $timestamps = false;
 
-    protected $fillable = [
-        'Commentaire',
-        'Date_Avis',
-        'Note',
-        'Id_Forfait',
-        'Id_Client',
-    ];
+    protected $guarded = [];
 
     public function forfait()
     {
