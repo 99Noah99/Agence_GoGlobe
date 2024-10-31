@@ -11,22 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
 
-        Schema::create('RESERVATION__reserver_voiture', function (Blueprint $table) {
+
+        Schema::create('reservation__reserver_voiture', function (Blueprint $table) {
             $table->integer('Id_Reservation_Voiture')->primary()->autoIncrement();
             $table->integer('Id_Client');
             $table->foreign('Id_Client')->references('Id_Client')->on('client');
             $table->integer('Id_Facture');
-            $table->foreign('Id_Facture')->references('Id_Facture')->on('facture');
+            $table->foreign('Id_Facture')->references('Id_Facture')->on('payement__facture');
             $table->integer('Id_Voiture');
-            $table->foreign('Id_Voiture')->references('Id_Voiture')->on('voiture');
+            $table->foreign('Id_Voiture')->references('Id_Voiture')->on('transport__voiture');
             $table->date('Date_debut_reservation_voiture');
             $table->date('Date_fin_reservation_voiture');
             $table->timestamps();
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**

@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
 
-        Schema::create('TRANSPORT__moyen_transport', function (Blueprint $table) {
+
+        Schema::create('transport__moyen_transport', function (Blueprint $table) {
             $table->integer('Id_Moyen_Transport')->primary();
             $table->string('Nom_mode_transport', 50);
             $table->timestamps();
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**

@@ -11,22 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
 
-        Schema::create('TRANSPORT__train', function (Blueprint $table) {
+
+        Schema::create('transport__train', function (Blueprint $table) {
             $table->integer('Id_Train')->primary();
             $table->time('Heure_depart');
             $table->time('Heure_arriver');
             $table->date('Date_depart');
             $table->date('Date_arriver');
             $table->integer('Id_Ville_Depart');
-            $table->foreign('Id_Ville_Depart')->references('Id_Ville')->on('ville');
+            $table->foreign('Id_Ville_Depart')->references('Id_Ville')->on('localisation__ville');
             $table->integer('Id_Ville_Arriver');
-            $table->foreign('Id_Ville_Arriver')->references('Id_Ville')->on('ville');
+            $table->foreign('Id_Ville_Arriver')->references('Id_Ville')->on('localisation__ville');
             $table->timestamps();
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**

@@ -11,22 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
 
-        Schema::create('BILLET__billet_train', function (Blueprint $table) {
+
+        Schema::create('billet__billet_train', function (Blueprint $table) {
             $table->integer('Id_Billet_Train')->primary();
             $table->decimal('Prix', 5, 2);
             $table->integer('Id_Train');
-            $table->foreign('Id_Train')->references('Id_Train')->on('train');
+            $table->foreign('Id_Train')->references('Id_Train')->on('transport__train');
             $table->integer('Id_Type_Siege_Train');
-            $table->foreign('Id_Type_Siege_Train')->references('Id_Type_Siege_Train')->on('type_siege_train');
+            $table->foreign('Id_Type_Siege_Train')->references('Id_Type_Siege_Train')->on('type__type_siege_train');
             $table->integer('Id_Facture')->unique();
+            $table->foreign('Id_Facture')->references('Id_Facture')->on('payement__facture');
             $table->integer('Id_Client');
             $table->foreign('Id_Client')->references('Id_Client')->on('client');
             $table->timestamps();
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**

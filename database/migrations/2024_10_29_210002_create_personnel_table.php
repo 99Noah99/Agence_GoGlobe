@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
+
 
         Schema::create('personnel', function (Blueprint $table) {
             $table->integer('Id_Personnel')->primary();
@@ -19,8 +19,6 @@ return new class extends Migration
             $table->foreign('Id_User')->references('Id_User')->on('users');
             $table->timestamps();
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**

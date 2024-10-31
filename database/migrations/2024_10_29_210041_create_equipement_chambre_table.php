@@ -11,18 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
 
-        Schema::create('CHAMBRE__equipement_chambre', function (Blueprint $table) {
+
+        Schema::create('chambre__equipement_chambre', function (Blueprint $table) {
             $table->integer('Id_Equipement_Chambre')->nullable()->autoIncrement();
             $table->integer('Id_Chambre');
-            $table->foreign('Id_Chambre')->references('Id_Chambre')->on('chambre');
+            $table->foreign('Id_Chambre')->references('Id_Chambre')->on('chambre__chambre');
             $table->integer('Id_Equipement');
-            $table->foreign('Id_Equipement')->references('Id_Equipement')->on('equipement');
+            $table->foreign('Id_Equipement')->references('Id_Equipement')->on('chambre__equipement');
             $table->timestamps();
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**

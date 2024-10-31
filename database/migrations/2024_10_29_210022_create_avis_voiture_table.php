@@ -11,21 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
 
-        Schema::create('AVIS__avis_voiture', function (Blueprint $table) {
+
+        Schema::create('avis__avis_voiture', function (Blueprint $table) {
             $table->integer('Id_Avis_Voiture')->primary();
             $table->text('Commentaire');
             $table->date('Date_avis');
             $table->integer('Note');
             $table->integer('Id_Voiture');
-            $table->foreign('Id_Voiture')->references('Id_Voiture')->on('voiture');
+            $table->foreign('Id_Voiture')->references('Id_Voiture')->on('transport__voiture');
             $table->integer('Id_Client');
             $table->foreign('Id_Client')->references('Id_Client')->on('client');
             $table->timestamps();
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**

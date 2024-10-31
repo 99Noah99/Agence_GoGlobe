@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
 
-        Schema::create('LOCALISATION__pays', function (Blueprint $table) {
+
+        Schema::create('localisation__pays', function (Blueprint $table) {
             $table->integer('Id_Pays')->primary();
             $table->string('Nom', 50);
             $table->timestamps();
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**

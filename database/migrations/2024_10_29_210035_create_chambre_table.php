@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
 
-        Schema::create('CHAMBRE__chambre', function (Blueprint $table) {
+
+        Schema::create('chambre__chambre', function (Blueprint $table) {
             $table->integer('Id_Chambre')->primary();
             $table->integer('Numero');
             $table->integer('Nb_personne');
@@ -21,8 +21,6 @@ return new class extends Migration
             $table->foreign('Id_Hebergement')->references('Id_Hebergement')->on('hebergement');
             $table->timestamps();
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**

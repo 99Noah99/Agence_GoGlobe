@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
+
 
         Schema::create('client', function (Blueprint $table) {
             $table->integer('Id_Client')->primary();
@@ -19,12 +19,10 @@ return new class extends Migration
             $table->string('Moyen_transport_pref', 50)->nullable();
             $table->string('Type_herbergement_pref', 50)->nullable();
             $table->integer('Id_Categorie_Client_Forfait');
-            $table->foreign('Id_Categorie_Client_Forfait')->references('Id_Categorie_Client_Forfait')->on('categorie__client_forfait');
+            $table->foreign('Id_Categorie_Client_Forfait')->references('Id_Categorie_Client_Forfait')->on('categorie_client_forfait');
             $table->integer('Id_User')->unique();
             $table->timestamps();
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**

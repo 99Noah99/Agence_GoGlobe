@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
 
-        Schema::create('TRANSPORT__voiture', function (Blueprint $table) {
+
+        Schema::create('transport__voiture', function (Blueprint $table) {
             $table->integer('Id_Voiture')->primary();
             $table->string('Marque', 50);
             $table->string('Modele', 50);
@@ -22,8 +22,6 @@ return new class extends Migration
             $table->string('Image', 255);
             $table->timestamps();
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**

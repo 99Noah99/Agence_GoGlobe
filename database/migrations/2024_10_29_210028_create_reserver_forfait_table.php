@@ -11,26 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
 
-        Schema::create('RESERVATION__reserver_forfait', function (Blueprint $table) {
+
+        Schema::create('reservation__reserver_forfait', function (Blueprint $table) {
             $table->integer('Id_Reservation_Forfait')->primary()->autoIncrement();
             $table->integer('Id_Forfait');
             $table->foreign('Id_Forfait')->references('Id_Forfait')->on('forfait');
-            $table->integer('Id_Transport');
-            $table->foreign('Id_Transport')->references('Id_Transport')->on('moyen_transport');
+            $table->integer('Id_Moyen_Transport');
+            $table->foreign('Id_Moyen_Transport')->references('Id_Moyen_Transport')->on('transport__moyen_transport');
             $table->integer('Id_Client');
             $table->foreign('Id_Client')->references('Id_Client')->on('client');
             $table->integer('Id_Hebergement');
             $table->foreign('Id_Hebergement')->references('Id_Hebergement')->on('hebergement');
             $table->integer('Id_Facture');
-            $table->foreign('Id_Facture')->references('Id_Facture')->on('facture');
+            $table->foreign('Id_Facture')->references('Id_Facture')->on('payement__facture');
             $table->date('Date_debut');
             $table->date('Date_fin');
             $table->timestamps();
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**

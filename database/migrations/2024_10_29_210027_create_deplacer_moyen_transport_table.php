@@ -11,18 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
 
-        Schema::create('TRANSPORT__deplacer_moyen_transport', function (Blueprint $table) {
+
+        Schema::create('transport__deplacer_moyen_transport', function (Blueprint $table) {
             $table->integer('Id_Deplacement')->primary()->autoIncrement();
-            $table->integer('Id_Transport');
-            $table->foreign('Id_Transport')->references('Id_Transport')->on('moyen_transport');
+            $table->integer('Id_Moyen_Transport');
+            $table->foreign('Id_Moyen_Transport')->references('Id_Moyen_Transport')->on('transport__moyen_transport');
             $table->integer('Id_Forfait');
             $table->foreign('Id_Forfait')->references('Id_Forfait')->on('forfait');
             $table->timestamps();
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**

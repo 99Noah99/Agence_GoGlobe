@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
+
 
         Schema::create('users', function (Blueprint $table) {
             $table->integer('Id_User')->primary();
@@ -24,8 +24,6 @@ return new class extends Migration
             $table->string('Role', 50);
             $table->timestamps();
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**

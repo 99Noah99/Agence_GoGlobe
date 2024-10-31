@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
 
-        Schema::create('PAYEMENT__statut_payement', function (Blueprint $table) {
+
+        Schema::create('payement__statut_payement', function (Blueprint $table) {
             $table->integer('Id_Statut_Payement')->primary();
             $table->string('Intitule', 50);
             $table->timestamps();
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
+
 
         Schema::create('etape_itineraire', function (Blueprint $table) {
             $table->integer('Id_Itineraire')->primary();
@@ -21,8 +21,6 @@ return new class extends Migration
             $table->foreign('Id_Forfait')->references('Id_Forfait')->on('forfait');
             $table->timestamps();
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**
