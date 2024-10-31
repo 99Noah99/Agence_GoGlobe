@@ -14,7 +14,7 @@ return new class extends Migration
 
 
         Schema::create('chambre__equipement', function (Blueprint $table) {
-            $table->integer('Id_Equipement')->primary();
+            $table->id('Id_Equipement');
             $table->string('Intitule', 100);
             $table->timestamps();
         });

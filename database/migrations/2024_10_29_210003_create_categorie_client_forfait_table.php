@@ -14,7 +14,7 @@ return new class extends Migration
 
 
         Schema::create('categorie_client_forfait', function (Blueprint $table) {
-            $table->integer('Id_Categorie_Client_Forfait')->primary();
+            $table->id('Id_Categorie_Client_Forfait');
             $table->string('Type', 50);
             $table->timestamps();
         });

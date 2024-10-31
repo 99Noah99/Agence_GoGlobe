@@ -14,7 +14,7 @@ return new class extends Migration
 
 
         Schema::create('localisation__pays', function (Blueprint $table) {
-            $table->integer('Id_Pays')->primary();
+            $table->id('Id_Pays');
             $table->string('Nom', 50);
             $table->timestamps();
         });

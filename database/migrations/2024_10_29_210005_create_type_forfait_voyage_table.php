@@ -14,7 +14,7 @@ return new class extends Migration
 
 
         Schema::create('type__type_forfait_voyage', function (Blueprint $table) {
-            $table->integer('Id_Type_Forfait_Voyage')->primary();
+            $table->id('Id_Type_Forfait_Voyage');
             $table->string('Nom', 50);
             $table->timestamps();
         });

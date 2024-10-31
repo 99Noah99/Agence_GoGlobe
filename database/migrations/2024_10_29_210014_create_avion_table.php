@@ -14,14 +14,14 @@ return new class extends Migration
 
 
         Schema::create('transport__avion', function (Blueprint $table) {
-            $table->integer('Id_Avion')->primary();
+            $table->id('Id_Avion');
             $table->time('Heure_depart');
             $table->time('Heure_arriver');
             $table->date('Date_depart');
             $table->date('Date_arriver');
-            $table->integer('Id_Ville_Depart');
+            $table->unsignedBigInteger('Id_Ville_Depart');
             $table->foreign('Id_Ville_Depart')->references('Id_Ville')->on('localisation__ville');
-            $table->integer('Id_Ville_Arriver');
+            $table->unsignedBigInteger('Id_Ville_Arriver');
             $table->foreign('Id_Ville_Arriver')->references('Id_Ville')->on('localisation__ville');
             $table->timestamps();
         });

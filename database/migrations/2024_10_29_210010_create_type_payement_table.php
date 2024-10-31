@@ -14,7 +14,7 @@ return new class extends Migration
 
 
         Schema::create('type__type_payement', function (Blueprint $table) {
-            $table->integer('Id_Type_Payement')->primary();
+            $table->id('Id_Type_Payement');
             $table->string('Intitule', 50);
             $table->timestamps();
         });

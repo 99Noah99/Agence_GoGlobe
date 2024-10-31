@@ -14,7 +14,7 @@ return new class extends Migration
 
 
         Schema::create('type__type_siege_avion', function (Blueprint $table) {
-            $table->integer('Id_Type_Siege_Avion')->primary();
+            $table->id('Id_Type_Siege_Avion');
             $table->string('Categorie', 50);
             $table->timestamps();
         });

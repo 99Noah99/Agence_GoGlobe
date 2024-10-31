@@ -14,15 +14,15 @@ return new class extends Migration
 
 
         Schema::create('billet__billet_avion', function (Blueprint $table) {
-            $table->integer('Id_Billet_Avion')->primary();
+            $table->id('Id_Billet_Avion');
             $table->decimal('Prix', 5, 2);
-            $table->integer('Id_Type_Siege_Avion');
+            $table->unsignedBigInteger('Id_Type_Siege_Avion');
             $table->foreign('Id_Type_Siege_Avion')->references('Id_Type_Siege_Avion')->on('type__type_siege_avion');
-            $table->integer('Id_Facture')->unique();
+            $table->unsignedBigInteger('Id_Facture')->unique();
             $table->foreign('Id_Facture')->references('Id_Facture')->on('payement__facture');
-            $table->integer('Id_Client');
+            $table->unsignedBigInteger('Id_Client');
             $table->foreign('Id_Client')->references('Id_Client')->on('client');
-            $table->integer('Id_Avion');
+            $table->unsignedBigInteger('Id_Avion');
             $table->foreign('Id_Avion')->references('Id_Avion')->on('transport__avion');
             $table->timestamps();
         });

@@ -14,7 +14,7 @@ return new class extends Migration
 
 
         Schema::create('transport__voiture', function (Blueprint $table) {
-            $table->integer('Id_Voiture')->primary();
+            $table->id('Id_Voiture');
             $table->string('Marque', 50);
             $table->string('Modele', 50);
             $table->string('Puissance', 50);

@@ -14,10 +14,10 @@ return new class extends Migration
 
 
         Schema::create('transport__deplacer_moyen_transport', function (Blueprint $table) {
-            $table->integer('Id_Deplacement')->primary()->autoIncrement();
-            $table->integer('Id_Moyen_Transport');
+            $table->id('Id_Deplacement');
+            $table->unsignedBigInteger('Id_Moyen_Transport');
             $table->foreign('Id_Moyen_Transport')->references('Id_Moyen_Transport')->on('transport__moyen_transport');
-            $table->integer('Id_Forfait');
+            $table->unsignedBigInteger('Id_Forfait');
             $table->foreign('Id_Forfait')->references('Id_Forfait')->on('forfait');
             $table->timestamps();
         });

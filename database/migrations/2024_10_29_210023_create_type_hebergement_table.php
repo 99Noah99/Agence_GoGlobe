@@ -14,7 +14,7 @@ return new class extends Migration
 
 
         Schema::create('type__type_hebergement', function (Blueprint $table) {
-            $table->integer('Id_Type_Hebergement')->primary();
+            $table->id('Id_Type_Hebergement');
             $table->string('Intitule', 50);
             $table->timestamps();
         });

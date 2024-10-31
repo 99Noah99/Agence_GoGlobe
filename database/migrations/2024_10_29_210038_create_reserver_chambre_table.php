@@ -14,12 +14,12 @@ return new class extends Migration
 
 
         Schema::create('reservation__reserver_chambre', function (Blueprint $table) {
-            $table->integer('Id_Reservation_Chambre')->primary()->autoIncrement();
-            $table->integer('Id_Client');
+            $table->id('Id_Reservation_Chambre');
+            $table->unsignedBigInteger('Id_Client');
             $table->foreign('Id_Client')->references('Id_Client')->on('client');
-            $table->integer('Id_Chambre');
+            $table->unsignedBigInteger('Id_Chambre');
             $table->foreign('Id_Chambre')->references('Id_Chambre')->on('chambre__chambre');
-            $table->integer('Id_Facture');
+            $table->unsignedBigInteger('Id_Facture');
             $table->foreign('Id_Facture')->references('Id_Facture')->on('payement__facture');
             $table->date('Date_debut_reservation_chambre');
             $table->date('Date_fin_reservation_chambre');

@@ -14,10 +14,10 @@ return new class extends Migration
 
 
         Schema::create('chambre__chambre', function (Blueprint $table) {
-            $table->integer('Id_Chambre')->primary();
+            $table->id('Id_Chambre');
             $table->integer('Numero');
             $table->integer('Nb_personne');
-            $table->integer('Id_Hebergement');
+            $table->unsignedBigInteger('Id_Hebergement');
             $table->foreign('Id_Hebergement')->references('Id_Hebergement')->on('hebergement');
             $table->timestamps();
         });

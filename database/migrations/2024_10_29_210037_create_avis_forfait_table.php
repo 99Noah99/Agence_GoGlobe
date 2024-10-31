@@ -14,13 +14,13 @@ return new class extends Migration
 
 
         Schema::create('avis__avis_forfait', function (Blueprint $table) {
-            $table->integer('Id_Avis_Forfait')->primary();
+            $table->id('Id_Avis_Forfait');
             $table->text('Commentaire');
             $table->date('Date_avis');
             $table->integer('Note');
-            $table->integer('Id_Forfait');
+            $table->unsignedBigInteger('Id_Forfait');
             $table->foreign('Id_Forfait')->references('Id_Forfait')->on('forfait');
-            $table->integer('Id_Client');
+            $table->unsignedBigInteger('Id_Client');
             $table->foreign('Id_Client')->references('Id_Client')->on('client');
             $table->timestamps();
         });

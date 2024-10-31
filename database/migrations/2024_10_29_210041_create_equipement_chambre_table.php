@@ -14,10 +14,10 @@ return new class extends Migration
 
 
         Schema::create('chambre__equipement_chambre', function (Blueprint $table) {
-            $table->integer('Id_Equipement_Chambre')->nullable()->autoIncrement();
-            $table->integer('Id_Chambre');
+            $table->id('Id_Equipement_Chambre');
+            $table->unsignedBigInteger('Id_Chambre');
             $table->foreign('Id_Chambre')->references('Id_Chambre')->on('chambre__chambre');
-            $table->integer('Id_Equipement');
+            $table->unsignedBigInteger('Id_Equipement');
             $table->foreign('Id_Equipement')->references('Id_Equipement')->on('chambre__equipement');
             $table->timestamps();
         });

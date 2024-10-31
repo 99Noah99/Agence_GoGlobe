@@ -14,14 +14,14 @@ return new class extends Migration
 
 
         Schema::create('payement__payement', function (Blueprint $table) {
-            $table->integer('Id_Payement')->primary();
-            $table->integer('Date_creation');
+            $table->id('Id_Payement');
+            $table->date('Date_creation');
             $table->decimal('Prix', 7, 2);
-            $table->integer('Id_Type_Payement');
+            $table->unsignedBigInteger('Id_Type_Payement');
             $table->foreign('Id_Type_Payement')->references('Id_Type_Payement')->on('type__type_payement');
-            $table->integer('Id_Statut_Payement');
+            $table->unsignedBigInteger('Id_Statut_Payement');
             $table->foreign('Id_Statut_Payement')->references('Id_Statut_Payement')->on('payement__statut_payement');
-            $table->integer('Id_Facture');
+            $table->unsignedBigInteger('Id_Facture');
             $table->foreign('Id_Facture')->references('Id_Facture')->on('payement__facture');
             $table->timestamps();
         });
