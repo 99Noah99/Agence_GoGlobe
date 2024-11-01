@@ -26,5 +26,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CategorieClientForfaitSeeder::class);
         $this->call(StatutPayementSeeder::class);
         $this->call(StatutFactureSeeder::class);
+        $this->call(AdminSeeder::class);
     }
 }

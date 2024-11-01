@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConnexionController;
 use App\Http\Controllers\AccueilController;
@@ -17,4 +18,8 @@ Route::post('/create_account', [ConnexionController::class, 'create_account'])->
 // --------------------------     Route prothégée par le middleware auth
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [ConnexionController::class, 'logout'])->name('logout');
+
+    // Route Account
+    Route::get('/account', [AccountController::class, 'show_account'])->name('show_account');
+    Route::get('/profil', [AccountController::class, 'show_profil'])->name('show_profil');
 });

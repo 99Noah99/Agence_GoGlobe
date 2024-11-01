@@ -18,9 +18,7 @@
                     <a class="navbar-brand" href="{{ route('show_accueil') }}">
                         <img src="{{ asset('images/logo.png') }}" alt="logo" />
                     </a>
-                    <div
-                        class="collapse navbar-collapse mean-menu"
-                        id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
 
 
                         <ul class="navbar-nav">
@@ -378,19 +376,23 @@
 
                             <div class="option-item">
                                 @guest
-                                    <a href="{{ route('show_login') }}" class="btn btn_navber me-2">Se connecter</a>
-                                    <a href="{{ route('show_register') }}" class="btn btn_navber me-5">S'inscrire</a>
+                                <a href="{{ route('show_login') }}" class="btn btn_navber me-2">Se connecter</a>
+                                <a href="{{ route('show_register') }}" class="btn btn_navber me-5">S'inscrire</a>
                                 @endguest
 
                                 @auth
-                                    <a href="{{ route('logout') }}" class="btn btn_navber me-2"
-                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        Se déconnecter
-                                    </a>
+                                <a href="{{ route('logout') }}" class="btn btn_navber me-2"
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    Se déconnecter
+                                </a>
+                                <a href="{{ route('show_account') }}">
                                     <i class="fa-solid fa-circle-user fa-2xl" style="color: WHITE;"></i>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    style="display: none;">
+                                    @csrf
+                                </form>
                                 @endauth
                             </div>
                         </div>
