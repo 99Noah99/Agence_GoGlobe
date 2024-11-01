@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="main-responsive-menu">
                     <div class="logo">
-                        <a href="{{ route('accueil') }}">
+                        <a href="{{ route('show_accueil') }}">
                             <img src="{{ asset('images/logo.png') }}" alt="logo" />
                         </a>
                     </div>
@@ -15,7 +15,7 @@
         <div class="main-navbar">
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
-                    <a class="navbar-brand" href="{{ route('accueil') }}">
+                    <a class="navbar-brand" href="{{ route('show_accueil') }}">
                         <img src="{{ asset('images/logo.png') }}" alt="logo" />
                     </a>
                     <div
@@ -375,9 +375,23 @@
                                     <i class="bi bi-search"></i>
                                 </a>
                             </div> -->
+
                             <div class="option-item">
-                                <a href="{{ route('login') }}" class="btn btn_navber">Se connecter</a>
-                                <a href="{{ route('register') }}" class="btn btn_navber">S'inscire</a>
+                                @guest
+                                    <a href="{{ route('show_login') }}" class="btn btn_navber me-2">Se connecter</a>
+                                    <a href="{{ route('show_register') }}" class="btn btn_navber me-5">S'inscrire</a>
+                                @endguest
+
+                                @auth
+                                    <a href="{{ route('logout') }}" class="btn btn_navber me-2"
+                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        Se déconnecter
+                                    </a>
+                                    <i class="fa-solid fa-circle-user fa-2xl" style="color: WHITE;"></i>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                @endauth
                             </div>
                         </div>
                     </div>

@@ -14,7 +14,7 @@ class TypeSiegeTrainSeeder extends Seeder
     public function run(): void
     {
         TypeSiegeTrain::create([
-            'Categorie' => 'Première Classe',
+            'Categorie' => 'Classe Standard',
         ]);
 
         TypeSiegeTrain::create([
@@ -22,7 +22,7 @@ class TypeSiegeTrainSeeder extends Seeder
         ]);
 
         TypeSiegeTrain::create([
-            'Categorie' => 'Classe Standard',
+            'Categorie' => 'Première Classe',
         ]);
     }
 }

@@ -17,15 +17,8 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'Nom',
-        'Prenom',
-        'Email',
-        'Numero_tel',
-        'username',
-        'password',
-        'Role',
-    ];
+    protected $guarded = []; // Ne protège aucune colonne, permet le create
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -36,6 +29,8 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    protected $primaryKey = 'Id_User';
 
     public function client()
     {

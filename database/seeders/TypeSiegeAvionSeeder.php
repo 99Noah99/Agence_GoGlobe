@@ -14,7 +14,7 @@ class TypeSiegeAvionSeeder extends Seeder
     public function run(): void
     {
         TypeSiegeAvion::create([
-            'Categorie' => 'Classe Business',
+            'Categorie' => 'Classe Standard',
         ]);
 
         TypeSiegeAvion::create([
@@ -22,7 +22,7 @@ class TypeSiegeAvionSeeder extends Seeder
         ]);
 
         TypeSiegeAvion::create([
-            'Categorie' => 'Classe Standard',
+            'Categorie' => 'Classe Business',
         ]);
     }
 }
