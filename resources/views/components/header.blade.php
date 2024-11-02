@@ -6,7 +6,7 @@
                 <div class="main-responsive-menu">
                     <div class="logo">
                         <a href="{{ route('show_accueil') }}">
-                            <img src="{{ asset('images/logo.png') }}" alt="logo" />
+                            <img src="{{ asset('images/logofinal.png') }}" alt="logo" />
                         </a>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
                     <a class="navbar-brand" href="{{ route('show_accueil') }}">
-                        <img src="{{ asset('images/logo.png') }}" alt="logo" />
+                        <img src="{{ asset('images/logofinal.png') }}" alt="logo" />
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
 

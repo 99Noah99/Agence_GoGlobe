@@ -22,4 +22,11 @@ Route::middleware('auth')->group(function () {
     // Route Account
     Route::get('/account', [AccountController::class, 'show_account'])->name('show_account');
     Route::get('/profil', [AccountController::class, 'show_profil'])->name('show_profil');
+
+    // --------------------------     Route pour admin
+    Route::middleware('CheckRole:admin')->group(function () {
+        Route::get('/admin/accueil', function () {
+            return view('admin.admin_accueil');
+        })->name('Admin.admin_accueil');
+    });
 });
