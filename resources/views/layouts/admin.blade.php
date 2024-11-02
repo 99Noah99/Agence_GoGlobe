@@ -19,6 +19,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ asset('css/vendors.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/plane.png') }}" />
 
     <title>Admin pages</title>
 </head>

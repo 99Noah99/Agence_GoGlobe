@@ -65,7 +65,7 @@
                                         class="fas fa-user-circle"></i>My profile</a>
                             </li>
                             @if (auth()->user()->Role == 'admin')
-                            <li><a href="{{ route('Admin.admin_accueil') }}"><i class="fas fa-user-shield"></i>Panneau
+                            <li><a href="{{ route('show_admin_accueil') }}"><i class="fas fa-user-shield"></i>Panneau
                                     Admin</a></li>
 
                             @endif

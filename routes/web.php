@@ -4,6 +4,7 @@ use App\Http\Controllers\AccountController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConnexionController;
 use App\Http\Controllers\AccueilController;
+use App\Http\Controllers\admin\AdminGestionHotelController;
 
 Route::get('/', [AccueilController::class, 'show_accueil'])->name('show_accueil');
 Route::get('/accueil', [AccueilController::class, 'show_accueil'])->name('show_accueil');
@@ -25,8 +26,10 @@ Route::middleware('auth')->group(function () {
 
     // --------------------------     Route pour admin
     Route::middleware('CheckRole:admin')->group(function () {
+
         Route::get('/admin/accueil', function () {
             return view('admin.admin_accueil');
-        })->name('Admin.admin_accueil');
+        })->name('show_admin_accueil');
+        Route::get('/admin/gestion_hotel/add', [AdminGestionHotelController::class, 'show_admin_add_hotel'])->name('show_admin_add_hotel');
     });
 });
