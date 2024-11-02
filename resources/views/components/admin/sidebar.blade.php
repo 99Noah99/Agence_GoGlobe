@@ -25,11 +25,11 @@
                         <ul class="list-disc pb-5 pl-40">
 
                             <li>
-                                <a href="db-vendor-tour.html" class="text-15">Tous les forfaits</a>
+                                <a href="" class="text-15">Tous les forfaits</a>
                             </li>
 
                             <li>
-                                <a href="db-vendor-add-tour.html" class="text-15">Ajouter un forfait</a>
+                                <a href="{{ route('show_admin_add_forfait') }}" class="text-15">Ajouter un forfait</a>
                             </li>
                         </ul>
                     </div>

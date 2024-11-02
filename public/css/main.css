@@ -11972,7 +11972,7 @@ div[data-slider]>input[type=range]::-ms-tooltip {
     pointer-events: none;
     font-size: 14px
 }
-.form-input input, .form-input textarea {
+.form-input input, .form-input textarea, .form-input select {
     padding: 0 15px 0;
     min-height: 56px;
     transition: all .2s cubic-bezier(.165, .84, .44, 1);
@@ -11982,6 +11982,7 @@ div[data-slider]>input[type=range]::-ms-tooltip {
 }
 
 .form-input input:focus,
+.form-input select:focus,
 .form-input textarea:focus {
     border: 2px solid #051036 !important
 }
