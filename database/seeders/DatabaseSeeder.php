@@ -2,10 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\MoyenTransport;
-use App\Models\StatutFacture;
-use App\Models\StatutPayement;
-use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -16,16 +12,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(EquipementSeeder::class);
-        $this->call(TypeForfaitVoyageSeeder::class);
-        $this->call(TypeSiegeAvionSeeder::class);
-        $this->call(TypeSiegeTrainSeeder::class);
-        $this->call(MoyenTransportSeeder::class);
-        $this->call(TypePayementSeeder::class);
-        $this->call(TypeHebergementSeeder::class);
-        $this->call(CategorieClientForfaitSeeder::class);
-        $this->call(StatutPayementSeeder::class);
-        $this->call(StatutFactureSeeder::class);
-        $this->call(AdminSeeder::class);
+        $this->call([
+            EquipementSeeder::class,
+            TypeForfaitVoyageSeeder::class,
+            TypeSiegeAvionSeeder::class,
+            TypeSiegeTrainSeeder::class,
+            MoyenTransportSeeder::class,
+            TypePayementSeeder::class,
+            TypeHebergementSeeder::class,
+            CategorieClientForfaitSeeder::class,
+            StatutPayementSeeder::class,
+            StatutFactureSeeder::class,
+            AdminSeeder::class,
+        ]);
+
+        //Seeder utilisant les factory
+        $this->call([
+            PaysSeeder::class,
+            RegionSeeder::class,
+            VilleSeeder::class,
+        ]);
     }
 }

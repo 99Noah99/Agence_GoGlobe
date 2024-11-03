@@ -15,7 +15,7 @@ return new class extends Migration
 
         Schema::create('localisation__ville', function (Blueprint $table) {
             $table->id('Id_Ville');
-            $table->string('Nom', 50);
+            $table->string('Nom', 255);
             $table->unsignedBigInteger('Id_Region');
             $table->foreign('Id_Region')->references('Id_Region')->on('localisation__region');
             $table->timestamps();

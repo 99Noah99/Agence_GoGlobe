@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Ville extends Model
 {
     use HasFactory;
+
     protected $table = 'localisation__ville';
     protected $primaryKey = 'Id_Ville';
 
@@ -21,5 +22,10 @@ class Ville extends Model
     public function trainsArrivee()
     {
         return $this->hasMany(Train::class, 'Id_Ville_Arriver', 'Id_Ville');
+    }
+
+    public function region()
+    {
+        return $this->belongsTo(Region::class);
     }
 }
