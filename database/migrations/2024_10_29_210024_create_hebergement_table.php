@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id('Id_Hebergement');
             $table->string('Nom', 50);
             $table->text('Description');
+            $table->string('Image', 255);
             $table->unsignedBigInteger('Id_Ville');
             $table->foreign('Id_Ville')->references('Id_Ville')->on('localisation__ville');
             $table->unsignedBigInteger('Id_Type_Hebergement');
