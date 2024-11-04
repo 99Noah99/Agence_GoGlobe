@@ -4,6 +4,7 @@ use App\Http\Controllers\AccountController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConnexionController;
 use App\Http\Controllers\AccueilController;
+use App\Http\Controllers\LocalisationController;
 use App\Http\Controllers\admin\AdminGestionHotelController;
 use App\Http\Controllers\admin\AdminGestionForfaitController;
 
@@ -21,6 +22,12 @@ Route::post('/create_account', [ConnexionController::class, 'create_account'])->
 // --------------------------     Route prothégée par le middleware auth
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [ConnexionController::class, 'logout'])->name('logout');
+
+    // Route recherche pays, region, ville
+    Route::get('/recherche/pays', [LocalisationController::class, 'recherche_pays'])->name('recherche_pays');
+    Route::get('/recherche/region/{Id_Pays}', [LocalisationController::class, 'recherche_region'])->name('recherche_region');
+    Route::get('/recherche/ville/{Id_Region}', [LocalisationController::class, 'recherche_ville'])->name('recherche_ville');
+
 
     // Route Account
     Route::get('/account', [AccountController::class, 'show_account'])->name('show_account');

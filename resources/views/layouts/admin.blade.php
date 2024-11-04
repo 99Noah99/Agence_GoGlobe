@@ -21,7 +21,10 @@
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="icon" type="image/png" href="{{ asset('images/plane.png') }}" />
 
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <!-- utilisation select2 pour menu déroulant avec barre de recherche -->
+
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
@@ -50,6 +53,7 @@
     <!-- JavaScript -->
     <script src="{{ asset('js/chart.min.js') }}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAz77U5XQuEME6TpftaMdX0bBelQxXRlM"></script>
+
 
     <script src="../../../unpkg.com/%40googlemaps/markerclusterer%402.0.13/dist/index.min.js"></script>
     <script src="{{ asset('js/vendors.js') }}"></script>
