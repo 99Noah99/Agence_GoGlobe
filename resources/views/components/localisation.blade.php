@@ -1,18 +1,18 @@
-<div class="col-6">
+<div class="col-4">
     <div class="form-input ">
         <label class="lh-1 text-16 text-light-1">Pays</label>
         <select id="recherche_pays" name='pays' required>
         </select>
     </div>
 </div>
-<div class="col-6">
+<div class="col-4">
     <div class="form-input ">
         <label class="lh-1 text-16 text-light-1">Region</label>
         <select id="recherche_region" name='region' required>
         </select>
     </div>
 </div>
-<div class="col-6">
+<div class="col-4">
     <div class="form-input ">
         <label class="lh-1 text-16 text-light-1">Ville</label>
         <select id="recherche_ville" name='ville' required>

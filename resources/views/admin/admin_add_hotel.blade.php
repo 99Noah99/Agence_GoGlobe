@@ -43,70 +43,75 @@
 
             </div>
 
-            <div class="tabs__content pt-30 js-tabs-content">
-                <div class="tabs__pane -tab-item-1 is-tab-el-active">
-                    <div class="col-xl-10">
-                        <div class="border-top-light mt-30 mb-30"></div>
-                        <div class="row x-gap-20 y-gap-20">
-                            <div class="col-6">
-                                <div class="form-input ">
-                                    <label class="lh-1 text-16 text-light-1">Nom</label>
-                                    <input type="text" required>
+            <form action="" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="tabs__content pt-30 js-tabs-content">
+                    <div class="tabs__pane -tab-item-1 is-tab-el-active">
+                        <div class="col-xl-10">
+                            <div class="border-top-light mt-30 mb-30"></div>
+                            <div class="row x-gap-20 y-gap-20">
+                                <div class="col-6">
+                                    <div class="form-input ">
+                                        <label class="lh-1 text-16 text-light-1">Nom</label>
+                                        <input type="text" name="nom" required placeholder="Nom de l'hôtel">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-input ">
-                                    <label class="lh-1 text-16 text-light-1">Description</label>
-                                    <input type="text" required>
+                                <div class="col-6">
+                                    <div class="form-input ">
+                                        <label class="lh-1 text-16 text-light-1">Type</label>
+                                        <select name="intitule" required>
+                                            <option value="">Sélectionnez une option</option>
+                                            @foreach ($donnee_type_hebergement as $type_hebergement)
+                                            <option value="{{$type_hebergement}}">{{$type_hebergement}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <x-localisation /> {{-- Include the localisation component --}}
-                            <div class="col-6">
-                                <div class="form-input ">
-                                    <label class="lh-1 text-16 text-light-1">Type</label>
-                                    <select name="intitule" required>
-                                        <option value="">Sélectionnez une option</option>
-                                        @foreach ($donnee_type_hebergement as $type_hebergement)
-                                        <option value="{{$type_hebergement}}">{{$type_hebergement}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-30">
-                            <div class="fw-500">Images</div>
-
-                            <div class="row x-gap-20 y-gap-20 pt-15">
-                                <div class="col-auto">
-                                    <div class="w-200">
-                                        <div class="d-flex ratio ratio-1:1">
-                                            <div
-                                                class="flex-center flex-column text-center bg-blue-2 h-full w-1/1 absolute rounded-4 border-type-1">
-                                                <div> <i class="fa-solid fa-image fa-2xl"></i> </div>
-                                                <div class="text-blue-1 fw-500">Upload Images</div>
-                                            </div>
-                                        </div>
-                                        <div class="text-center mt-10 text-14 text-light-1">PNG or JPG no bigger than
-                                            800px wide and
-                                            tall.</div>
+                                <x-localisation /> {{-- Include the localisation component --}}
+                                <div class="col-8">
+                                    <div class="form-input">
+                                        <label class="lh-1 text-16 text-light-1">Description</label>
+                                        <textarea name="description" rows="5" required
+                                            placeholder="Description de l'hôtel"></textarea>
                                     </div>
                                 </div>
                             </div>
 
+                            <div class="mt-30">
+                                <div class="fw-500">Images</div>
+
+                                <div class="row x-gap-20 y-gap-20 pt-15">
+                                    <div class="col-auto">
+                                        <div class="w-200">
+                                            <div class="d-flex ratio ratio-1:1">
+                                                <div id="upload-area" style="cursor: pointer;"
+                                                    class="flex-center flex-column text-center bg-blue-2 h-full w-1/1 absolute rounded-4 border-type-1">
+                                                    <div> <i class="fa-solid fa-image fa-2xl"></i> </div>
+                                                    <div class="text-blue-1 fw-500">Upload Images</div>
+                                                    <img id="image-preview" src="#" alt="Aperçu de l'image"
+                                                        style="display: none; max-width: 200px;" />
+                                                </div>
+                                                <!-- Champ input caché -->
+                                                <input type="file" name="image" id="image-input" accept="image/*"
+                                                    style="display: none;" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
+
+                    <div class="d-inline-block pt-30">
+
+                        <button type="submit" class="button h-50 px-24 -dark-1 bg-blue-1 text-white">
+                            Créer l'hôtel
+                        </button>
+
+                    </div>
                 </div>
-
-                <div class="d-inline-block pt-30">
-
-                    <a href="#" class="button h-50 px-24 -dark-1 bg-blue-1 text-white">
-                        Save changes
-                    </a>
-
-                </div>
-            </div>
-
+            </form>
             {{-- <div class="tabs__pane -tab-item-2">
                 <div class="col-xl-10">
                     <div class="row x-gap-20 y-gap-20">
@@ -577,4 +582,19 @@
     </div>
 </div>
 </div>
+
+<script>
+    document.getElementById('upload-area').addEventListener('click', function() {
+        document.getElementById('image-input').click();
+    });
+
+    document.getElementById('image-input').addEventListener('change', function() {
+        const [file] = this.files;
+        if (file) {
+            const preview = document.getElementById('image-preview');
+            preview.src = URL.createObjectURL(file);
+            preview.style.display = 'block';
+        }
+    });
+</script>
 @stop
