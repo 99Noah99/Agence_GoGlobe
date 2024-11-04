@@ -22,8 +22,8 @@ class RegionFactory extends Factory
     public function definition()
     {
         return [
-            'Nom' => $this->faker->state,
-            'Id_Pays' => Pays::factory(), // Associe une région à un pays
+            'Nom' => $this->faker->unique()->state,
+            // 'Id_Pays' => Pays::factory(), // Associe une région à un pays
         ];
     }
 }

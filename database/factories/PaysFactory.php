@@ -20,7 +20,7 @@ class PaysFactory extends Factory
     public function definition()
     {
         return [
-            'Nom' => $this->faker->country,
+            'Nom' => $this->faker->unique()->country,
         ];
     }
 }

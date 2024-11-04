@@ -24,13 +24,14 @@ class DatabaseSeeder extends Seeder
             StatutPayementSeeder::class,
             StatutFactureSeeder::class,
             AdminSeeder::class,
+            LocalisationSeeder::class,
         ]);
 
         //Seeder utilisant les factory
-        $this->call([
-            PaysSeeder::class,
-            RegionSeeder::class,
-            VilleSeeder::class,
-        ]);
+        // $this->call([
+        //     PaysSeeder::class,
+        //     RegionSeeder::class,
+        //     VilleSeeder::class,
+        // ]);
     }
 }

@@ -22,8 +22,8 @@ class VilleFactory extends Factory
     public function definition()
     {
         return [
-            'Nom' => $this->faker->city,
-            'Id_Region' => Region::factory(), // Associe une ville à une région
+            'Nom' => $this->faker->unique()->city,
+            // 'Id_Region' => Region::factory(), // Associe une ville à une région
         ];
     }
 }
