@@ -43,7 +43,7 @@
                         <div class="sidebar__button col-12 d-flex items-center justify-between">
                             <div class="d-flex items-center text-15 lh-1 fw-500">
                                 <i class="fas fa-building mr-15"></i>
-                                Gérer Hôtels
+                                Gérer hébergements
                             </div>
                             <i class="fa-solid fa-chevron-down fa-2xs"></i>
                         </div>
@@ -53,11 +53,12 @@
                         <ul class="list-disc pb-5 pl-40">
 
                             <li>
-                                <a href="db-vendor-hotels.html" class="text-15">Tous les hotels</a>
+                                <a href="db-vendor-hotels.html" class="text-15">Tous les hébergements</a>
                             </li>
 
                             <li>
-                                <a href="{{ route('show_admin_add_hotel') }}" class="text-15">Ajouter hotel</a>
+                                <a href="{{ route('show_admin_add_hebergement') }}" class="text-15">Ajouter un
+                                    hébergement</a>
                             </li>
                         </ul>
                     </div>
