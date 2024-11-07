@@ -12,7 +12,7 @@ class LocalisationSeeder extends Seeder
     public function run()
     {
         // Nombre de pays à créer
-        $nombrePays = 15;
+        $nombrePays = 10;
 
         // Pour chaque pays
         for ($i = 0; $i < $nombrePays; $i++) {

@@ -65,7 +65,7 @@
                                     </div>
                                 </div>
                                 <x-localisation /> {{-- Include the localisation component --}}
-                                <div class="col-8">
+                                <div class="col-12">
                                     <div class="form-input">
                                         <label class="lh-1 text-16 text-light-1">Description</label>
                                         <textarea name="Description" rows="5" required

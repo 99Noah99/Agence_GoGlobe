@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('Intitule', 200);
             $table->integer('Duree');
             $table->decimal('Prix', 7, 2);
+            $table->string('Image', 255);
             $table->unsignedBigInteger('Id_Categorie_Client_Forfait');
             $table->foreign('Id_Categorie_Client_Forfait')->references('Id_Categorie_Client_Forfait')->on('categorie_client_forfait');
             $table->unsignedBigInteger('Id_Type_Forfait_Voyage');
