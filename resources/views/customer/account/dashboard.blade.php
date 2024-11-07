@@ -1,4 +1,4 @@
-@extends('layouts.customer_dashbord')
+@extends('layouts.customer_dashbord', ['current_user' => $current_user])
 @section('contenu_account')
 
 <div class="col-lg-8">
@@ -29,7 +29,7 @@
         </div>
     </div>
     <div class="dashboard_common_table">
-        <h3>My bookings</h3>
+        <h3>Mes reservations</h3>
         <div class="table-responsive-lg table_common_area">
             <table class="table">
                 <thead>

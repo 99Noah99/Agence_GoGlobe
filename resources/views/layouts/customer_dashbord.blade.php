@@ -25,10 +25,9 @@
             <div class="col-lg-4">
                 <div class="dashboard_sidebar">
                     <div class="dashboard_sidebar_user">
-                        <img src="assets/img/common/dashboard-user.png" alt="img">
-                        <h3>Sherlyn Chopra</h3>
-                        <p><a href="tel:+00-123-456-789">+00 123 456 789</a></p>
-                        <p><a href="mailto:sherlyn@domain.com">sherlyn@domain.com</a></p>
+                        <h3>{{ $current_user->Prenom. " " . $current_user->Nom }}</h3>
+                        <p><a href="tel:+00-123-456-789">{{$current_user->Numero_tel}}</a></p>
+                        <p><a href="mailto:sherlyn@domain.com">{{$current_user->Email}}</a></p>
                     </div>
                     <div class="dashboard_menu_area">
                         <ul>
