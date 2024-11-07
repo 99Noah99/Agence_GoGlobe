@@ -45,5 +45,6 @@ Route::middleware('auth')->group(function () {
         Route::post('/admin/gestion/hebergement/add', [AdminGestionHebergementController::class, 'create_hebergement'])->name('create_hebergement');
 
         Route::get('/admin/gestion/forfait/get_hebergement', [AdminGestionForfaitController::class, 'get_hebergement'])->name('get_hebergement');
+        Route::get('/admin/gestion/forfait/get_moyen_transport', [AdminGestionForfaitController::class, 'get_moyen_transport'])->name('get_moyen_transport');
     });
 });

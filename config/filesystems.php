@@ -42,6 +42,11 @@ return [
             'root' => storage_path('app/img/hebergement'),
             'throw' => false,
         ],
+        'img_forfait' => [
+            'driver' => 'local',
+            'root' => storage_path('app/img/forfait'),
+            'throw' => false,
+        ],
 
         'public' => [
             'driver' => 'local',
