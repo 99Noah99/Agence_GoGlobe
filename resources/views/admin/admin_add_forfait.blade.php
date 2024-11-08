@@ -69,7 +69,7 @@
                                 <div class="col-12 d-flex justify-content-center">
                                     <div class="form-input">
                                         <label class="lh-1 text-16 text-light-1">Type du forfait</label>
-                                        <select name="Id_Categorie_Client_Forfait" required>
+                                        <select name="Id_Type_Forfait_Voyage" required>
                                             <option value="">Sélectionnez une option</option>
                                             @foreach ($donnee_type_forfait as $type_forfait)
                                             <option value="{{ $type_forfait->Id_Type_Forfait_Voyage }}">
@@ -81,51 +81,58 @@
                                 </div>
                                 <div class="col-6">
                                     <x-select2 label="Moyens de transports" idName="moyen-transport-select"
-                                        fieldName="moyen_transport" placeholder="Sélectionnez une option"
+                                        fieldName="Id_Moyen_Transport" placeholder="Sélectionnez une option"
                                         isMultiple="true" :route="route('get_moyen_transport')" />
                                 </div>
                                 <div class="col-6">
-                                    <x-select2 label="Choisir un hôtel" idName="hotel-select" fieldName="hotel"
-                                        placeholder="Sélectionnez une option" isMultiple="true"
-                                        :route="route('get_hebergement')" />
+                                    <x-select2 label="Choisir un hebergement" idName="hebergement-select"
+                                        fieldName="Id_Hebergement" placeholder="Sélectionnez une option"
+                                        isMultiple="true" :route="route('get_hebergement')" />
 
                                 </div>
                             </div>
 
-                            <!-- Section pour les étapes -->
-                            <div class="col-6">
-                                <div class="form-input">
-                                    <label class="lh-1 text-16 text-light-1">Titre</label>
-                                    <input type="text" id="titre" placeholder="Titre de l'étape">
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-input">
-                                    <label class="lh-1 text-16 text-light-1">Rang</label>
-                                    <input type="number" id="rang" placeholder="Rang de l'étape">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button type="button" onclick="ajouterEtape()"
-                                    class="button h-50 px-24 -dark-1 bg-blue-1 text-white">
-                                    Ajouter une étape
-                                </button>
-                            </div>
+                            <!-- Delimitation section pour les étapes avec titre-->
+                            <hr class="my-4">
+                            <div class="row x-gap-20 y-gap-20">
+                                <h4 class="text-20 fw-500">Étapes</h4>
 
-                            <!-- Tableau pour afficher les étapes ajoutées -->
-                            <div class="col-12 mt-20">
-                                <table class="table" id="table-etapes">
-                                    <thead>
-                                        <tr>
-                                            <th>Titre</th>
-                                            <th>Rang</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- Les lignes ajoutées apparaîtront ici -->
-                                    </tbody>
-                                </table>
+
+                                <!-- Section pour les étapes -->
+                                <div class="col-6">
+                                    <div class="form-input">
+                                        <label class="lh-1 text-16 text-light-1">Titre</label>
+                                        <input type="text" id="titre" placeholder="Titre de l'étape">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-input">
+                                        <label class="lh-1 text-16 text-light-1">Rang</label>
+                                        <input type="number" id="rang" placeholder="Rang de l'étape">
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex justify-content-center">
+                                    <button type="button" onclick="ajouterEtape()"
+                                        class="button h-40 px-20 -light-1 bg-border  text-black">
+                                        Ajouter une étape
+                                    </button>
+                                </div>
+
+                                <!-- Tableau pour afficher les étapes ajoutées -->
+                                <div class="col-12 mt-20 d-flex justify-content-center">
+                                    <table class="table table-bordered" id="table-etapes">
+                                        <thead>
+                                            <tr>
+                                                <th>Titre</th>
+                                                <th>Rang</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Les lignes ajoutées apparaîtront ici -->
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
 
@@ -150,6 +157,27 @@
     </div>
 </div>
 </div>
+
+<style>
+    /* Style personnalisé pour les bordures du tableau */
+    #table-etapes {
+        border-collapse: collapse;
+        /* Assure une apparence compacte pour les bordures */
+    }
+
+    #table-etapes th,
+    #table-etapes td {
+        border: 1px solid #000;
+        /* Bordure noire de 2px pour chaque cellule */
+        padding: 10px;
+        padding-right: 100px;
+        padding-left: 100px;
+        /* Espacement à l'intérieur des cellules */
+        text-align: center;
+        /* Centrer le texte pour une meilleure lisibilité */
+    }
+</style>
+
 
 <!-- Script JavaScript pour gérer l'ajout et la suppression des étapes -->
 <script>
@@ -181,7 +209,7 @@
         // Créer un bouton Supprimer pour chaque ligne
         const deleteButton = document.createElement('button');
         deleteButton.textContent = "Supprimer";
-        deleteButton.className = "button bg-red-1 text-white";
+        deleteButton.className = "button h-30 px-10 bg-red-1 text-white";
         deleteButton.onclick = function() {
             supprimerEtape(newRow);
         };

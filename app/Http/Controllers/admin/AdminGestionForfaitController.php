@@ -7,7 +7,11 @@ use App\Models\CategorieClientForfait;
 use App\Models\MoyenTransport;
 use App\Models\Hebergement;
 use App\Models\TypeForfaitVoyage;
+use App\Models\Forfait;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Exception;
+use Illuminate\Support\Facades\Auth;
 
 class AdminGestionForfaitController extends Controller
 {
@@ -69,15 +73,46 @@ class AdminGestionForfaitController extends Controller
 
     public function create_forfait(Request $request)
     {
-        // Validation des données du formulaire
-        $request->validate([
-            'Nom' => 'required|string',
-            'Description' => 'required|string',
-            'Id_Categorie_Client_Forfait' => 'required|integer',
-            'Id_Type_Forfait_Voyage' => 'required|integer',
-            'Id_Hebergement' => 'required|integer',
-            'Id_Moyen_Transport' => 'required|integer',
-            'Prix' => 'required|numeric',
-        ]);
+        DB::beginTransaction();
+
+        try {
+            // Validation des données du formulaire
+            $request->validate([
+                'Intitule' => 'required|string',
+                'Duree' => 'required|integer',
+                'Prix' => 'required|numeric',
+                'Id_Categorie_Client_Forfait' => 'required|integer',
+                'Id_Type_Forfait_Voyage' => 'required|integer',
+                'Id_Moyen_Transport' => 'required|integer',
+                'Id_Hebergement' => 'required|integer',
+
+                // Validation pour le tableau `etapes`
+                'etapes' => 'required|array',  // Vérifie que `etapes` est un tableau et qu'il est requis
+                'etapes.*.titre' => 'required|string|max:255', // Valide chaque `titre` comme une chaîne requise, max 255 caractères
+                'etapes.*.rang' => 'required|integer|min:1',   // Valide chaque `rang` comme un entier requis, min 1
+            ]);
+
+            $img = $request->image;
+            if ($request->hasFile('image')) {
+                // Stocker l'image et obtenir le chemin
+                $path = $request->file('image')->store('', 'img_forfait'); // stockage de l'image dans le dossier img_forfait
+
+                // enregistrement du forfait
+                $forfait = Forfait::create([
+                    'Intitule' => $request->Intitule,
+                    'Duree' => $request->Duree,
+                    'Prix' => $request->Prix,
+                    'Image' => $path,
+                    'Id_Categorie_Client_Forfait' => $request->Id_Categorie_Client_Forfait,
+                    'Id_Type_Forfait_Voyage' => $request->Id_Type_Forfait_Voyage,
+                    'Id_Personnel' => Auth::user()->Id_User,
+                ]);
+            } else {
+                return back()->with('error', 'Erreur lors de l\'enregistrement de l\'image');
+            }
+        } catch (Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('error', 'Erreur lors de la création du forfait');
+        }
     }
 }
