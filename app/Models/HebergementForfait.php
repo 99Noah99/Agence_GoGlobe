@@ -10,4 +10,9 @@ class HebergementForfait extends Model
     protected $primaryKey = 'Id_Avoir_Hebergement';
 
     protected $guarded = [];
+
+    public function hebergement()
+    {
+        return $this->hasOne(Hebergement::class, 'Id_Hebergement', 'Id_Hebergement ');
+    }
 }

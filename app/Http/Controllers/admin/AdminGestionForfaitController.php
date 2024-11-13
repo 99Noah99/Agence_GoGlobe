@@ -8,9 +8,13 @@ use App\Models\MoyenTransport;
 use App\Models\Hebergement;
 use App\Models\TypeForfaitVoyage;
 use App\Models\Forfait;
+use App\Models\EtapeItineraire;
+use App\Models\DeplacerMoyenTransport;
+use App\Models\HebergementForfait;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Exception;
+use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Auth;
 
 class AdminGestionForfaitController extends Controller
@@ -83,8 +87,10 @@ class AdminGestionForfaitController extends Controller
                 'Prix' => 'required|numeric',
                 'Id_Categorie_Client_Forfait' => 'required|integer',
                 'Id_Type_Forfait_Voyage' => 'required|integer',
-                'Id_Moyen_Transport' => 'required|integer',
-                'Id_Hebergement' => 'required|integer',
+                'Id_Moyen_Transport' => 'required|array', // Valide que c'est un tableau (multiple sélection)
+                'Id_Moyen_Transport.*' => 'integer|exists:transport__moyen_transport,Id_Moyen_Transport', // Vérifie que chaque élément existe,
+                'Id_Hebergement' => 'required|array',
+                'Id_Hebergement.*' => 'integer|exists:hebergement,Id_Hebergement',
 
                 // Validation pour le tableau `etapes`
                 'etapes' => 'required|array',  // Vérifie que `etapes` est un tableau et qu'il est requis
@@ -110,9 +116,36 @@ class AdminGestionForfaitController extends Controller
             } else {
                 return back()->with('error', 'Erreur lors de l\'enregistrement de l\'image');
             }
+
+            // Enregistrement des étapes associées au forfait
+            foreach ($request->etapes as $etapeData) {
+                EtapeItineraire::create([
+                    'Id_Forfait' => $forfait->Id_Forfait,
+                    'Titre' => $etapeData['titre'],
+                    'Rang' => $etapeData['rang'],
+                ]);
+            }
+
+            // Enregistrement des moyens de transport associés au forfait
+            foreach ($request->Id_Moyen_Transport as $moyenTransportId) {
+                DeplacerMoyenTransport::create([
+                    'Id_Forfait' => $forfait->Id_Forfait,
+                    'Id_Moyen_Transport' => $moyenTransportId,
+                ]);
+            }
+
+            // Enregistrement des hébergements associés au forfait
+            foreach ($request->Id_Hebergement as $hebergementId) {
+                HebergementForfait::create([
+                    'Id_Forfait' => $forfait->Id_Forfait,
+                    'Id_Hebergement' => $hebergementId,
+                ]);
+            }
+            DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('error', 'Erreur lors de la création du forfait');
         }
+        return redirect()->route('show_admin_add_forfait')->with('success', 'Forfait créé avec succès');
     }
 }

@@ -1,6 +1,7 @@
 <div class="form-input">
     <label class="lh-1 text-16 text-light-1">{{ $label }}</label>
-    <select id="{{ $idName }}" name="{{ $fieldName }}" @if($isMultiple) multiple="multiple" @endif required>
+    <select id="{{ $idName }}" name="{{ $fieldName }}@if($isMultiple)[]@endif" @if($isMultiple) multiple="multiple"
+        @endif required>
     </select>
 </div>
 

@@ -28,7 +28,8 @@
             </div>
 
             <div class="tabs__content pt-30 js-tabs-content">
-                <form>
+                <form action="{{ route('create_forfait') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="tabs__pane -tab-item-1 is-tab-el-active">
                         <div class="col-xl-10">
                             <div class="border-top-light mt-30 mb-30"></div>

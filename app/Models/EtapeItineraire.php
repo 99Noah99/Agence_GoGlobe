@@ -10,4 +10,9 @@ class EtapeItineraire extends Model
     protected $primaryKey = 'Id_Etape_Itineraire';
 
     protected $guarded = [];
+
+    public function forfait()
+    {
+        return $this->belongsTo(Forfait::class, 'Id_Forfait', 'Id_Forfait');
+    }
 }
