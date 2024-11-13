@@ -93,7 +93,7 @@ class AdminGestionForfaitController extends Controller
                 'Id_Hebergement.*' => 'integer|exists:hebergement,Id_Hebergement',
 
                 // Validation pour le tableau `etapes`
-                'etapes' => 'required|array',  // Vérifie que `etapes` est un tableau et qu'il est requis
+                'etapes' => 'required|array|min:1',  // Vérifie que `etapes` est un tableau et qu'il est requis et contient au moins un élément
                 'etapes.*.titre' => 'required|string|max:255', // Valide chaque `titre` comme une chaîne requise, max 255 caractères
                 'etapes.*.rang' => 'required|integer|min:1',   // Valide chaque `rang` comme un entier requis, min 1
             ]);

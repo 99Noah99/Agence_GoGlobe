@@ -147,7 +147,8 @@
 
                     <div class="d-inline-block pt-30">
 
-                        <button type="submit" class="button h-50 px-24 -dark-1 bg-blue-1 text-white">
+                        <button type="submit" id="submit-button" class="button h-50 px-24 -dark-1 bg-blue-1 text-white"
+                            disabled>
                             Créer un nouveau forfait
                         </button>
 
@@ -211,6 +212,7 @@
         const deleteButton = document.createElement('button');
         deleteButton.textContent = "Supprimer";
         deleteButton.className = "button h-30 px-10 bg-red-1 text-white";
+        deleteButton.type = 'button'; // Ensure the button does not submit the form
         deleteButton.onclick = function() {
             supprimerEtape(newRow);
         };
@@ -232,6 +234,11 @@
 
         etapeCount++;
 
+        // Enable the submit button if there's at least one étape
+        if (etapeCount > 0) {
+            document.getElementById('submit-button').disabled = false;
+        }
+
         // Réinitialiser les champs Titre et Rang
         document.getElementById('titre').value = '';
         document.getElementById('rang').value = '';
@@ -240,7 +247,21 @@
     function supprimerEtape(row) {
         // Supprimer la ligne du tableau
         row.remove();
-    }
-</script>
 
-@stop
+        etapeCount--;
+
+        // Disable the submit button if there are no étapes
+        if (etapeCount === 0) {
+            document.getElementById('submit-button').disabled = true;
+        }
+    }
+
+    // Add event listener to the submit button
+    document.getElementById('submit-button').addEventListener('click', function(event) {
+        if (etapeCount === 0) {
+            event.preventDefault(); // Prevent form submission
+            alert("Veuillez ajouter au moins une étape avant de soumettre le formulaire.");
+        }
+    });
+</script>
+@endsection
