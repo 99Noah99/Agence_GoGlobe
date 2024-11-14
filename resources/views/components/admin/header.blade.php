@@ -13,6 +13,6 @@
             </a> --}}
         </div>
 
-        <h1 class="header__title">Admin Pannel</h1>
+        <h1 class="header__title">Admin Panel</h1>
     </div>
 </header>

@@ -10,4 +10,9 @@ class CategorieClientForfait extends Model
     protected $primaryKey = 'Id_Categorie_Client_Forfait';
 
     protected $guarded = [];
+
+    public function client()
+    {
+        return $this->hasMany(Client::class, 'Id_Categorie_Client_Forfait', 'Id_Categorie_Client_Forfait');
+    }
 }

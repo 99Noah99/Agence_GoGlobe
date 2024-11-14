@@ -21,6 +21,7 @@ return new class extends Migration
             $table->unsignedBigInteger('Id_Categorie_Client_Forfait');
             $table->foreign('Id_Categorie_Client_Forfait')->references('Id_Categorie_Client_Forfait')->on('categorie_client_forfait');
             $table->unsignedBigInteger('Id_User')->unique();
+            $table->foreign('Id_User')->references('Id_User')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

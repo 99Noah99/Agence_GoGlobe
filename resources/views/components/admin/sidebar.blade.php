@@ -15,7 +15,7 @@
                         <div class="sidebar__button col-12 d-flex items-center justify-between">
                             <div class="d-flex items-center text-15 lh-1 fw-500">
                                 <i class="fas fa-flag  mr-15"></i>
-                                Gérer forfaits
+                                Gestion forfaits
                             </div>
                             <i class="fa-solid fa-chevron-down fa-2xs"></i>
                         </div>
@@ -43,7 +43,7 @@
                         <div class="sidebar__button col-12 d-flex items-center justify-between">
                             <div class="d-flex items-center text-15 lh-1 fw-500">
                                 <i class="fas fa-building mr-15"></i>
-                                Gérer hébergements
+                                Gestion hébergements
                             </div>
                             <i class="fa-solid fa-chevron-down fa-2xs"></i>
                         </div>
@@ -93,35 +93,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="sidebar__item ">
-            <div class="accordion -db-sidebar js-accordion">
-                <div class="accordion__item">
-                    <div class="accordion__button">
-                        <div class="sidebar__button col-12 d-flex items-center justify-between">
-                            <div class="d-flex items-center text-15 lh-1 fw-500">
-                                <i class="fas fa-book t mr-15"></i>
-                                News
-                            </div>
-                            <i class="fa-solid fa-chevron-down fa-2xs"></i>
-                        </div>
-                    </div>
-
-                    <div class="accordion__content">
-                        <ul class="list-disc pb-5 pl-40">
-
-                            <li>
-                                <a href="db-vendor-news.html" class="text-15">Toutes les news</a>
-                            </li>
-
-                            <li>
-                                <a href="db-add-news.html" class="text-15">Ajouter une news</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="sidebar__item ">
             <div class="accordion -db-sidebar js-accordion">
                 <div class="accordion__item">
@@ -156,8 +127,8 @@
                     <div class="accordion__button">
                         <div class="sidebar__button col-12 d-flex items-center justify-between">
                             <div class="d-flex items-center text-15 lh-1 fw-500">
-                                <i class="fas fa-calendar-check mr-15"></i>
-                                Event
+                                <i class="fas fa-user-cog mr-15"></i>
+                                Gestion clients
                             </div>
                             <i class="fa-solid fa-chevron-down fa-2xs"></i>
                         </div>
@@ -165,71 +136,12 @@
 
                     <div class="accordion__content">
                         <ul class="list-disc pb-5 pl-40">
-
                             <li>
-                                <a href="db-all-events.html" class="text-15">Tous les évènements</a>
+                                <a href="{{ route('show_admin_all_user') }}" class="text-15">Tous les clients</a>
                             </li>
-
                             <li>
-                                <a href="db-add-events.html" class="text-15">Ajouter un évènement</a>
+                                <a href="db-dashboard.html" class="text-15">Ajouter un client</a>
                             </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="sidebar__item ">
-            <div class="accordion -db-sidebar js-accordion">
-                <div class="accordion__item">
-                    <div class="accordion__button">
-                        <div class="sidebar__button col-12 d-flex items-center justify-between">
-                            <div class="d-flex items-center text-15 lh-1 fw-500">
-                                <i class="fas fa-star mr-15"></i>
-                                User plan
-                            </div>
-                            <i class="fa-solid fa-chevron-down fa-2xs"></i>
-                        </div>
-                    </div>
-
-                    <div class="accordion__content">
-                        <ul class="list-disc pb-5 pl-40">
-
-                            <li>
-                                <a href="db-all-plans.html" class="text-15">All plans</a>
-                            </li>
-
-                            <li>
-                                <a href="db-add-plans.html" class="text-15">Ajouter plans</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="sidebar__item ">
-            <div class="accordion -db-sidebar js-accordion">
-                <div class="accordion__item">
-                    <div class="accordion__button">
-                        <div class="sidebar__button col-12 d-flex items-center justify-between">
-                            <div class="d-flex items-center text-15 lh-1 fw-500">
-                                <i class="fas fa-ticket-alt mr-15"></i>
-                                Coupon
-                            </div>
-                            <i class="fa-solid fa-chevron-down fa-2xs"></i>
-                        </div>
-                    </div>
-
-                    <div class="accordion__content">
-                        <ul class="list-disc pb-5 pl-40">
-
-                            <li>
-                                <a href="db-all-coupon.html" class="text-15">All Coupon</a>
-                            </li>
-
-                            <li>
-                                <a href="db-add-coupon.html" class="text-15">Ajouter Coupon</a>
-                            </li>
-
                         </ul>
                     </div>
                 </div>
@@ -240,22 +152,6 @@
                 <a href="db-all-review.html" class="d-flex items-center text-15 lh-1 fw-500">
                     <i class="fas fa-comments mr-15"></i>
                     Review
-                </a>
-            </div>
-        </div>
-        <div class="sidebar__item">
-            <div class="sidebar__button">
-                <a href="db-all-media.html" class="d-flex items-center text-15 lh-1 fw-500">
-                    <i class="fas fa-folder mr-15"></i>
-                    Media
-                </a>
-            </div>
-        </div>
-        <div class="sidebar__item">
-            <div class="sidebar__button">
-                <a href="db-dashboard.html" class="d-flex items-center text-15 lh-1 fw-500">
-                    <i class="far fa-paper-plane mr-15"></i>
-                    All social links
                 </a>
             </div>
         </div>
@@ -303,38 +199,7 @@
                 </div>
             </div>
         </div>
-        <div class="sidebar__item ">
-            <div class="accordion -db-sidebar js-accordion">
-                <div class="accordion__item">
-                    <div class="accordion__button">
-                        <div class="sidebar__button col-12 d-flex items-center justify-between">
-                            <div class="d-flex items-center text-15 lh-1 fw-500">
-                                <i class="fas fa-user-cog mr-15"></i>
-                                Gérer les utilisateurs
-                            </div>
-                            <i class="fa-solid fa-chevron-down fa-2xs"></i>
-                        </div>
-                    </div>
 
-                    <div class="accordion__content">
-                        <ul class="list-disc pb-5 pl-40">
-                            <li>
-                                <a href="db-dashboard.html" class="text-15">Tous les clients</a>
-                            </li>
-                            <li>
-                                <a href="db-dashboard.html" class="text-15">Ajouter un client</a>
-                            </li>
-                            <li>
-                                <a href="db-dashboard.html" class="text-15">All role</a>
-                            </li>
-                            <li>
-                                <a href="db-dashboard.html" class="text-15">Ajouter role</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="sidebar__item">
             <div class="sidebar__button ">
                 <a href="{{ route('logout') }}" class="d-flex items-center text-15 lh-1 fw-500"
