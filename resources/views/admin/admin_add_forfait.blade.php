@@ -91,6 +91,8 @@
                                         isMultiple="true" :route="route('get_hebergement')" />
 
                                 </div>
+
+                                <x-localisation />
                             </div>
 
                             <!-- Delimitation section pour les étapes avec titre-->
@@ -136,6 +138,8 @@
                                 </div>
                             </div>
                         </div>
+
+
 
                         <div class="mt-30">
                             <div class="fw-500">Images</div>

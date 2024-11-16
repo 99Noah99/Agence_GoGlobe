@@ -91,6 +91,7 @@ class AdminGestionForfaitController extends Controller
                 'Id_Moyen_Transport.*' => 'integer|exists:transport__moyen_transport,Id_Moyen_Transport', // Vérifie que chaque élément existe,
                 'Id_Hebergement' => 'required|array',
                 'Id_Hebergement.*' => 'integer|exists:hebergement,Id_Hebergement',
+                'Id_Ville' => 'required|integer',
 
                 // Validation pour le tableau `etapes`
                 'etapes' => 'required|array|min:1',  // Vérifie que `etapes` est un tableau et qu'il est requis et contient au moins un élément
@@ -112,6 +113,7 @@ class AdminGestionForfaitController extends Controller
                     'Id_Categorie_Client_Forfait' => $request->Id_Categorie_Client_Forfait,
                     'Id_Type_Forfait_Voyage' => $request->Id_Type_Forfait_Voyage,
                     'Id_Personnel' => Auth::user()->Id_User,
+                    'Id_Ville' => $request->Id_Ville,
                 ]);
             } else {
                 return back()->with('error', 'Erreur lors de l\'enregistrement de l\'image');

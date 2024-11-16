@@ -25,6 +25,8 @@ return new class extends Migration
             $table->foreign('Id_Type_Forfait_Voyage')->references('Id_Type_Forfait_Voyage')->on('type__type_forfait_voyage');
             $table->unsignedBigInteger('Id_Personnel');
             $table->foreign('Id_Personnel')->references('Id_Personnel')->on('personnel');
+            $table->unsignedBigInteger('Id_Ville');
+            $table->foreign('Id_Ville')->references('Id_Ville')->on('localisation__ville');
             $table->timestamps();
         });
     }
