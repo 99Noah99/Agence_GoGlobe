@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id('Id_Billet_Train');
             $table->decimal('Prix', 5, 2);
             $table->unsignedBigInteger('Id_Train');
-            $table->foreign('Id_Train')->references('Id_Train')->on('transport__train');
             $table->unsignedBigInteger('Id_Type_Siege_Train');
+            $table->unsignedBigInteger('Id_Facture')->unique()->nullable();
+            $table->unsignedBigInteger('Id_Client')->nullable();
+            $table->foreign('Id_Train')->references('Id_Train')->on('transport__train');
             $table->foreign('Id_Type_Siege_Train')->references('Id_Type_Siege_Train')->on('type__type_siege_train');
-            $table->unsignedBigInteger('Id_Facture')->unique();
             $table->foreign('Id_Facture')->references('Id_Facture')->on('payement__facture');
-            $table->unsignedBigInteger('Id_Client');
             $table->foreign('Id_Client')->references('Id_Client')->on('client');
             $table->timestamps();
         });

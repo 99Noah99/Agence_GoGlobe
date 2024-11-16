@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id('Id_Billet_Avion');
             $table->decimal('Prix', 5, 2);
             $table->unsignedBigInteger('Id_Type_Siege_Avion');
-            $table->foreign('Id_Type_Siege_Avion')->references('Id_Type_Siege_Avion')->on('type__type_siege_avion');
-            $table->unsignedBigInteger('Id_Facture')->unique();
-            $table->foreign('Id_Facture')->references('Id_Facture')->on('payement__facture');
-            $table->unsignedBigInteger('Id_Client');
-            $table->foreign('Id_Client')->references('Id_Client')->on('client');
+            $table->unsignedBigInteger('Id_Facture')->unique()->nullable();
+            $table->unsignedBigInteger('Id_Client')->nullable();
             $table->unsignedBigInteger('Id_Avion');
+            $table->foreign('Id_Type_Siege_Avion')->references('Id_Type_Siege_Avion')->on('type__type_siege_avion');
+            $table->foreign('Id_Facture')->references('Id_Facture')->on('payement__facture');
+            $table->foreign('Id_Client')->references('Id_Client')->on('client');
             $table->foreign('Id_Avion')->references('Id_Avion')->on('transport__avion');
             $table->timestamps();
         });
