@@ -40,12 +40,16 @@ return [
         'img_hebergement' => [
             'driver' => 'local',
             'root' => storage_path('app/img/hebergement'),
+            'url' => env('APP_URL') . '/storage/app/img/hebergement',
             'throw' => false,
+            'visibility' => 'public',
         ],
+
         'img_forfait' => [
             'driver' => 'local',
             'root' => storage_path('app/img/forfait'),
-            'throw' => false,
+            'url' => env('APP_URL') . '/storage/app/img/forfait',
+            'visibility' => 'public',
         ],
 
         'public' => [
@@ -81,8 +85,10 @@ return [
     |
     */
 
+    // php artisan storage:link pour réaliser les liens symboliques
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('storage/forfait') => storage_path('app/img/forfait'),
     ],
 
 ];

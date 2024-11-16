@@ -17,11 +17,11 @@ class Region extends Model
 
     public function pays()
     {
-        return $this->belongsTo(Pays::class);
+        return $this->belongsTo(Pays::class, 'Id_Pays', 'Id_Pays');
     }
 
     public function villes()
     {
-        return $this->hasMany(Ville::class);
+        return $this->hasMany(Ville::class, 'Id_Region', 'Id_Region');
     }
 }

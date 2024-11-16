@@ -26,12 +26,5 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             LocalisationSeeder::class,
         ]);
-
-        //Seeder utilisant les factory
-        // $this->call([
-        //     PaysSeeder::class,
-        //     RegionSeeder::class,
-        //     VilleSeeder::class,
-        // ]);
     }
 }

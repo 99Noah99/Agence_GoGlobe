@@ -15,9 +15,7 @@
     <div class="row y-gap-20 justify-between items-end pb-20 lg:pb-40 md:pb-32">
         <div class="col-auto">
 
-            <h1 class="text-30 lh-14 fw-600">Add Hotels</h1>
-            <div class="text-15 text-light-1">Lorem ipsum dolor sit amet, consectetur.</div>
-
+            <h1 class="text-30 lh-14 fw-600">Ajouter un hébergement</h1>
         </div>
 
         <div class="col-auto">
@@ -33,7 +31,7 @@
                 <div class="col-auto">
                     <button
                         class="tabs__button text-18 lg:text-16 text-light-1 fw-500 pb-5 lg:pb-0 js-tabs-button is-tab-el-active"
-                        data-tab-target=".-tab-item-1">Hotel information</button>
+                        data-tab-target=".-tab-item-1">Hébergement informations</button>
                 </div>
 
             </div>

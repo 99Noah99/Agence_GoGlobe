@@ -26,6 +26,6 @@ class Ville extends Model
 
     public function region()
     {
-        return $this->belongsTo(Region::class);
+        return $this->belongsTo(Region::class, 'Id_Region', 'Id_Region');
     }
 }

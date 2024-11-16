@@ -19,16 +19,16 @@
                         <img src="{{ asset('images/logofinal.png') }}" alt="logo" />
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-
-
+                        {{-- <div>
+                            <a href="#" class="text-white">
+                                Home
+                            </a>
+                        </div> --}}
                         <ul class="navbar-nav">
 
                             <!-- Home -->
-                            <li class="nav-item">
-                                <a href="#" class="nav-link active">
-                                    Home
-                                    <i class="fas fa-angle-down"></i>
-                                </a>
+                            {{-- <li class="nav-item">
+
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a href="index.html" class="nav-link active">Home One</a>
@@ -73,18 +73,19 @@
                                         <a href="index-14.html" class="nav-link">Home fourteen</a>
                                     </li>
                                 </ul>
-                            </li>
+                            </li> --}}
 
                             <!-- Categories -->
-                            <!-- <li class="nav-item">
+                            <li class="nav-item">
                                 <a href="#" class="nav-link">
-                                    Categories
+                                    Réservations
                                     <i class="fas fa-angle-down"></i>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link"> Tours </a>
-                                        <ul class="dropdown-menu">
+                                        <a href="{{ route('show_all_forfait') }}" class="nav-link"> Tout les forfaits
+                                        </a>
+                                        {{-- <ul class="dropdown-menu">
                                             <li class="nav-item">
                                                 <a href="tour-search.html" class="nav-link">Tour Grid</a>
                                             </li>
@@ -98,30 +99,26 @@
                                                 <a href="tour-details.html" class="nav-link">Tour Details</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a
-                                                    href="tour-booking-submission.html"
-                                                    class="nav-link">Tour Booking</a>
+                                                <a href="tour-booking-submission.html" class="nav-link">Tour Booking</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="top-destinations.html" class="nav-link">Top Destination</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a
-                                                    href="top-destinations-details.html"
-                                                    class="nav-link">Destination Details</a>
+                                                <a href="top-destinations-details.html" class="nav-link">Destination
+                                                    Details</a>
                                             </li>
-                                        </ul>
+                                        </ul> --}}
                                     </li>
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <a href="#" class="nav-link"> Flights </a>
                                         <ul class="dropdown-menu">
                                             <li class="nav-item">
                                                 <a href="flight-search-result.html" class="nav-link">Flight</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a
-                                                    href="flight-booking-submission.html"
-                                                    class="nav-link">Flight Booking</a>
+                                                <a href="flight-booking-submission.html" class="nav-link">Flight
+                                                    Booking</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -190,9 +187,8 @@
                                                 <a href="apartment-search.html" class="nav-link">Apartments Grid</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a
-                                                    href="apartment-search-list.html"
-                                                    class="nav-link">Apartments List</a>
+                                                <a href="apartment-search-list.html" class="nav-link">Apartments
+                                                    List</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="apartment-search-map.html" class="nav-link">Apartments Map</a>
@@ -235,9 +231,9 @@
                                                 <a href="cruise-booking.html" class="nav-link">Cruise Booking</a>
                                             </li>
                                         </ul>
-                                    </li>
+                                    </li> --}}
                                 </ul>
-                            </li> -->
+                            </li>
 
                             <!-- Pages -->
                             <!-- <li class="nav-item">

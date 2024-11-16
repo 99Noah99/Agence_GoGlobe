@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConnexionController;
 use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\LocalisationController;
+use App\Http\Controllers\ForfaitController;
 use App\Http\Controllers\admin\AdminGestionHebergementController;
 use App\Http\Controllers\admin\AdminGestionForfaitController;
 use App\Http\Controllers\admin\AdminGestionUserController;
@@ -33,6 +34,12 @@ Route::middleware('auth')->group(function () {
     // Route Account
     Route::get('/account', [AccountController::class, 'show_account'])->name('show_account');
     Route::get('/profil', [AccountController::class, 'show_profil'])->name('show_profil');
+
+
+    // Route forfait
+    Route::get('/forfait', [ForfaitController::class, 'show_all_forfait'])->name('show_all_forfait');
+
+
 
     // --------------------------     Route pour admin
     Route::middleware('CheckRole:admin')->group(function () {

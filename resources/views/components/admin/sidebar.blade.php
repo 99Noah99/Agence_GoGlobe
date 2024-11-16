@@ -139,9 +139,6 @@
                             <li>
                                 <a href="{{ route('show_admin_all_user') }}" class="text-15">Tous les clients</a>
                             </li>
-                            <li>
-                                <a href="db-dashboard.html" class="text-15">Ajouter un client</a>
-                            </li>
                         </ul>
                     </div>
                 </div>
