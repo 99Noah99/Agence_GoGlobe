@@ -34,26 +34,13 @@
                         <table class="table-4 -border-bottom col-12">
                             <thead class="bg-light-2">
                                 <tr>
-                                    <th>
-
-                                        <div class="d-flex items-center">
-                                            <div class="form-checkbox ">
-                                                <input type="checkbox" name="name">
-                                                <div class="form-checkbox__mark">
-                                                    <div class="form-checkbox__icon icon-check"></div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </th>
                                     <th>Client</th>
                                     <th>Email</th>
                                     <th>Téléphone</th>
                                     <th>Date création</th>
                                     <th>Catégorie</th>
-                                    <th>Modifier</th>
-                                    <th>Supprimer</th>
+                                    <th class="text-center">Modifier</th>
+                                    <th class="text-center">Supprimer</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -71,7 +58,7 @@
                                     </td>
                                     <td class="text-center">
                                         <a href="{{ route('admin_delete_user', ['id' => $client->Id_Client]) }}">
-                                            <i class="fa-solid fa-trash fa-bounce fa-lg"></i>
+                                            <i class="fa-solid fa-trash fa-bounce fa-lg" style="color: #940000;"></i>
                                         </a>
                                     </td>
                                 </tr>
@@ -84,70 +71,6 @@
 
             </div>
         </div>
-
-        {{-- <div class="pt-30">
-            <div class="row justify-between">
-                <div class="col-auto">
-                    <button class="button -blue-1 size-40 rounded-full border-light">
-                        <i class="icon-chevron-left text-12"></i>
-                    </button>
-                </div>
-
-                <div class="col-auto">
-                    <div class="row x-gap-20 y-gap-20 items-center">
-
-                        <div class="col-auto">
-
-                            <div class="size-40 flex-center rounded-full">1</div>
-
-                        </div>
-
-                        <div class="col-auto">
-
-                            <div class="size-40 flex-center rounded-full bg-dark-1 text-white">2</div>
-
-                        </div>
-
-                        <div class="col-auto">
-
-                            <div class="size-40 flex-center rounded-full">3</div>
-
-                        </div>
-
-                        <div class="col-auto">
-
-                            <div class="size-40 flex-center rounded-full bg-light-2">4</div>
-
-                        </div>
-
-                        <div class="col-auto">
-
-                            <div class="size-40 flex-center rounded-full">5</div>
-
-                        </div>
-
-                        <div class="col-auto">
-
-                            <div class="size-40 flex-center rounded-full">...</div>
-
-                        </div>
-
-                        <div class="col-auto">
-
-                            <div class="size-40 flex-center rounded-full">20</div>
-
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-auto">
-                    <button class="button -blue-1 size-40 rounded-full border-light">
-                        <i class="icon-chevron-right text-12"></i>
-                    </button>
-                </div>
-            </div>
-        </div> --}}
     </div>
 </div>
 

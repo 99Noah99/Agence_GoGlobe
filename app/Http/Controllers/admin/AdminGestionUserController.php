@@ -95,6 +95,45 @@ class AdminGestionUserController extends Controller
         return view('admin.admin_update_user', ['donnee_client' => $donnee_client, 'donne_categorie_client_forfait' => $donne_categorie_client_forfait]);
     }
 
+    public function admin_update_user(Request $request)
+    {
+        DB::beginTransaction();
+
+
+        try {
+
+            $request->validate([
+                'Nom' => 'required|string|max:255',
+                'Prenom' => 'required|string|max:255',
+                'Email' => 'required|email|max:255',
+                'Numero_tel' => 'required|string|max:255',
+                'Categorie_Client_Forfait' => 'required|integer',
+            ]);
+
+            // Récupérer le client
+            $client = Client::find($request->Id_Client);
+
+            // Mettre à jour l'utilisateur associé au client
+            $client->user->update([
+                'Nom' => $request->Nom,
+                'Prenom' => $request->Prenom,
+                'Email' => $request->Email,
+                'Numero_tel' => $request->Numero_tel,
+            ]);
+
+            // Mettre à jour la catégorie client forfait
+            $client->update([
+                'Id_Categorie_Client_Forfait' => $request->Categorie_Client_Forfait,
+            ]);
+
+            DB::commit();
+            return redirect()->route('show_admin_all_user')->with('success', 'Client mis à jour avec succès');
+        } catch (Exception $e) {
+            DB::rollBack();
+            return redirect()->route('show_admin_all_user')->with('error', 'Erreur lors de la mise à jour');
+        }
+    }
+
     private function deleteFactureWithPayments(Facture $facture)
     {
         // Supprimer tous les paiements associés à la facture

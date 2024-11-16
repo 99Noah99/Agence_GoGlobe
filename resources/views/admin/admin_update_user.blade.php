@@ -28,7 +28,7 @@
             </div>
 
             <div class="tabs__content pt-30 js-tabs-content">
-                <form action="" method="POST">
+                <form action="{{ route('admin_update_user') }}" method="POST">
                     @csrf
                     <div class="tabs__pane -tab-item-1 is-tab-el-active">
                         <div class="col-xl-10">
@@ -38,21 +38,23 @@
                                 <div class="col-6">
                                     <div class="form-input ">
                                         <label class="lh-1 text-16 text-light-1">Nom</label>
-                                        <input type="text" name="Nom" value="{{$donnee_client->user->Nom}}">
+                                        <input type="text" name="Nom" value="{{$donnee_client->user->Nom}}" required>
                                     </div>
                                 </div>
 
                                 <div class="col-6">
                                     <div class="form-input ">
                                         <label class="lh-1 text-16 text-light-1">Prenom</label>
-                                        <input type="text" name="Prenom" value="{{$donnee_client->user->Prenom}}">
+                                        <input type="text" name="Prenom" value="{{$donnee_client->user->Prenom}}"
+                                            required>
                                     </div>
                                 </div>
 
                                 <div class=" col-6">
                                     <div class="form-input ">
                                         <label class="lh-1 text-16 text-light-1">Email</label>
-                                        <input type="text" name="Email" value="{{$donnee_client->user->Email}}">
+                                        <input type="text" name="Email" value="{{$donnee_client->user->Email}}"
+                                            required>
                                     </div>
                                 </div>
 
@@ -63,7 +65,6 @@
                                             value="{{$donnee_client->user->Numero_tel}}">
                                     </div>
                                 </div>
-
                                 {{-- <div class=" col-6">
                                     <div class="form-input ">
                                         <label class="lh-1 text-16 text-light-1">Identifiant</label>
@@ -87,24 +88,27 @@
                                                 value="{{$donnee_client->categorie_client_forfait->Id_Categorie_Client_Forfait}}">
                                                 {{ $donnee_client->categorie_client_forfait->Type }}</option>
                                             @foreach ($donne_categorie_client_forfait as $categorie)
+                                            @if($categorie->Id_Categorie_Client_Forfait !=
+                                            $donnee_client->categorie_client_forfait->Id_Categorie_Client_Forfait)
                                             <option value="{{ $categorie->Id_Categorie_Client_Forfait }}">
                                                 {{ $categorie->Type }}
                                             </option>
+                                            @endif
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
 
+                                <input type="hidden" name="Id_Client" value="{{$donnee_client->Id_Client}}">
+
                             </div>
 
                         </div>
                     </div>
-
                     <div class="d-inline-block pt-30">
 
-                        <button type="submit" id="submit-button" class="button h-50 px-24 -dark-1 bg-blue-1 text-white"
-                            disabled>
-                            Modifer le client
+                        <button type="submit" class="button h-50 px-24 -dark-1 bg-blue-1 text-white">
+                            Modifier client
                         </button>
 
                     </div>
