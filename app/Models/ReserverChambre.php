@@ -10,4 +10,9 @@ class ReserverChambre extends Model
     protected $primaryKey = 'Id_Reservation_Chambre';
 
     protected $guarded = [];
+
+    public function facture()
+    {
+        return $this->hasOne(Facture::class, 'Id_Facture', 'Id_Facture');
+    }
 }

@@ -10,4 +10,9 @@ class Payement extends Model
     protected $primaryKey = 'Id_Payement';
 
     protected $guarded = [];
+
+    public function facture()
+    {
+        return $this->belongsTo(Facture::class, 'Id_Facture', 'Id_Facture');
+    }
 }

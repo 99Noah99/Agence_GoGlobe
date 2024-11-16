@@ -70,7 +70,7 @@
                                         </a>
                                     </td>
                                     <td class="text-center">
-                                        <a href="{{ route('show_admin_delete_user', ['id' => $client->Id_Client]) }}">
+                                        <a href="{{ route('admin_delete_user', ['id' => $client->Id_Client]) }}">
                                             <i class="fa-solid fa-trash fa-bounce fa-lg"></i>
                                         </a>
                                     </td>

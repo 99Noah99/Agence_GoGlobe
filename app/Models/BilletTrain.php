@@ -25,6 +25,6 @@ class BilletTrain extends Model
 
     public function facture()
     {
-        return $this->belongsTo(Facture::class, 'Id_Facture', 'Id_Facture');
+        return $this->hasOne(Facture::class, 'Id_Facture', 'Id_Facture');
     }
 }

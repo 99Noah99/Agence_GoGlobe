@@ -143,6 +143,7 @@ class AdminGestionForfaitController extends Controller
             }
             DB::commit();
         } catch (Exception $e) {
+            dd($e);
             DB::rollBack();
             return redirect()->back()->with('error', 'Erreur lors de la création du forfait');
         }

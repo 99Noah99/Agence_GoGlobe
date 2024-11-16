@@ -13,8 +13,13 @@ class Facture extends Model
 
     protected $guarded = [];
 
-    public function statutFacture()
+    public function statut_facture()
     {
         return $this->belongsTo(StatutFacture::class, 'Id_Statut_Facture', 'Id_Statut_Facture');
+    }
+
+    public function payements()
+    {
+        return $this->hasMany(Payement::class, 'Id_Facture', 'Id_Facture');
     }
 }
