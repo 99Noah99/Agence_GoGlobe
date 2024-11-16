@@ -65,7 +65,7 @@
                                     <td>{{$client->created_at}}</td>
                                     <td>{{$client->categorie_client_forfait->Type}}</td>
                                     <td class="text-center">
-                                        <a href="">
+                                        <a href="{{ route('show_admin_update_user', ['id' => $client->Id_Client]) }}">
                                             <i class="fa-solid fa-pen fa-bounce fa-lg"></i>
                                         </a>
                                     </td>

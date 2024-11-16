@@ -47,6 +47,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/admin/gestion/hebergement/add', [AdminGestionHebergementController::class, 'create_hebergement'])->name('create_hebergement');
         Route::get('/admin/gestion/user', [AdminGestionUserController::class, 'show_admin_all_user'])->name('show_admin_all_user');
         Route::get('/admin/gestion/user/delete/{id}', [AdminGestionUserController::class, 'admin_delete_user'])->name('admin_delete_user');
+        Route::get('/admin/gestion/user/update/{id}', [AdminGestionUserController::class, 'show_admin_update_user'])->name('show_admin_update_user');
 
         // Route pour les requêtes AJAX
         Route::get('/admin/gestion/forfait/get_hebergement', [AdminGestionForfaitController::class, 'get_hebergement'])->name('get_hebergement');

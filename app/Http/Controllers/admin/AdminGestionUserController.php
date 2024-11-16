@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 
 use App\Http\Controllers\Controller;
+use App\Models\CategorieClientForfait;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Models\Facture;
@@ -87,9 +88,11 @@ class AdminGestionUserController extends Controller
         }
     }
 
-    public function admin_update_user(Request $request)
+    public function show_admin_update_user(Request $request)
     {
-        $client = Client::find($request->id);
+        $donnee_client = Client::with(['user', 'categorie_client_forfait'])->find($request->id);
+        $donne_categorie_client_forfait = CategorieClientForfait::all();
+        return view('admin.admin_update_user', ['donnee_client' => $donnee_client, 'donne_categorie_client_forfait' => $donne_categorie_client_forfait]);
     }
 
     private function deleteFactureWithPayments(Facture $facture)
