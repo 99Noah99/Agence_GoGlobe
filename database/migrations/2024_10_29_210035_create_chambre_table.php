@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id('Id_Chambre');
             $table->integer('Numero');
             $table->integer('Nb_personne');
+            $table->decimal('Prix', 6, 2);
             $table->unsignedBigInteger('Id_Hebergement');
             $table->foreign('Id_Hebergement')->references('Id_Hebergement')->on('hebergement');
             $table->timestamps();

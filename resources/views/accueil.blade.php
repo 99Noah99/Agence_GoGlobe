@@ -86,7 +86,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="tour_search_form">
-                                        <form action="{{ route('show_all_forfait') }}" method="get">
+                                        <form action="{{ route('show_forfait') }}" method="get">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-lg-8 col-md-7 col-sm-12 col-12">

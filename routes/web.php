@@ -37,8 +37,10 @@ Route::middleware('auth')->group(function () {
 
 
     // Route forfait
-    Route::get('/forfaits', [ForfaitController::class, 'show_all_forfait'])->name('show_all_forfait');
+    Route::get('/forfaits', [ForfaitController::class, 'show_forfait'])->name('show_forfait');
     Route::get('/forfait/detail/{Id_Forfait}', [ForfaitController::class, 'show_forfait_detail'])->name('show_forfait_detail');
+    Route::get('/forfait/reservation/{Id_Forfait}', [ForfaitController::class, 'show_forfait_reservation'])->name('show_forfait_reservation');
+    Route::post('/forfait/reservation', [ForfaitController::class, 'create_forfait_reservation'])->name('create_forfait_reservation');
 
 
 

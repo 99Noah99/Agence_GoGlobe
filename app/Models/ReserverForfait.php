@@ -15,4 +15,24 @@ class ReserverForfait extends Model
     {
         return $this->hasOne(Facture::class, 'Id_Facture', 'Id_Facture');
     }
+
+    public function forfait()
+    {
+        return $this->hasOne(Forfait::class, 'Id_Forfait', 'Id_Forfait');
+    }
+
+    public function hebergement()
+    {
+        return $this->hasOne(Hebergement::class, 'Id_Hebergement', 'Id_Hebergement');
+    }
+
+    public function moyen_transport()
+    {
+        return $this->hasOne(MoyenTransport::class, 'Id_Moyen_Transport', 'Id_Moyen_Transport');
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class, 'Id_Client', 'Id_Client');
+    }
 }

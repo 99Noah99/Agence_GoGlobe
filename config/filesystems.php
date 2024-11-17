@@ -51,6 +51,12 @@ return [
             'visibility' => 'public',
         ],
 
+        'facture' => [
+            'driver' => 'local',
+            'root' => storage_path('app/facture'),
+            'throw' => false,
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

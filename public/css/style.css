@@ -5169,6 +5169,11 @@ textarea {
     font-weight: 500;
 }
 
+.table_common_area tbody tr td.in_progress {
+    color: #2875e9;
+    font-weight: 500;
+}
+
 .table_common_area tbody tr td.cancele {
     color: #c8102e;
     font-weight: 500;

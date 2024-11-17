@@ -15,9 +15,9 @@ return new class extends Migration
 
         Schema::create('payement__facture', function (Blueprint $table) {
             $table->id('Id_Facture');
-            // $table->foreign('Id_Facture')->references('Id_Facture')->on('billet__billet_bus');
-            $table->string('Intitule', 50);
+            $table->string('Intitule', 255);
             $table->decimal('Montant', 7, 2);
+            $table->string('Fichier', 255);
             $table->date('Date_creation');
             $table->unsignedBigInteger('Id_Statut_Facture');
             $table->foreign('Id_Statut_Facture')->references('Id_Statut_Facture')->on('payement__statut_facture');

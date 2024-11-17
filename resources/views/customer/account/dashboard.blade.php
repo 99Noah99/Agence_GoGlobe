@@ -10,8 +10,8 @@
                         <i class="fas fa-shopping-bag"></i>
                     </div>
                     <div class="dashboard_top_text">
-                        <h3>Total bookings</h3>
-                        <h1>231</h1>
+                        <h3>Nombre de réservation</h3>
+                        <h1>{{ $reservation_forfait ? $reservation_forfait->count() : 0 }}</h1>
                     </div>
                 </div>
             </div>
@@ -21,98 +21,43 @@
                         <i class="fas fa-sync"></i>
                     </div>
                     <div class="dashboard_top_text">
-                        <h3>Pending bookings</h3>
-                        <h1>23</h1>
+                        <h3>Reservation en cours</h3>
+                        <h1>a voir si je fais</h1>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="dashboard_common_table">
-        <h3>Mes reservations</h3>
+        <h3>Mes forfaits réservés</h3>
         <div class="table-responsive-lg table_common_area">
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Sl no.</th>
-                        <th>Booking ID</th>
-                        <th>Booking type</th>
-                        <th>Booking amount</th>
-                        <th>Status</th>
+                        <th>Forfait ID</th>
+                        <th>Type de voyage</th>
+                        <th>Prix</th>
+                        <th>Statut</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>01.</td>
-                        <td>#JK589V80</td>
-                        <td>Hotel</td>
-                        <td>$754.00</td>
-                        <td class="complete">Completed</td>
+                        @foreach ($reservation_forfait as $reservation)
+                        <td>{{ $reservation->Id_Forfait }}</td>
+                        <td>{{ $reservation->forfait->type_forfait->Nom }}</td>
+                        <td>{{ $reservation->forfait->Prix }} € </td>
+                        <td
+                            class="@if($reservation->facture->statut_facture->Intitule == 'Payé') complete @elseif($reservation->facture->statut_facture->Intitule == 'Non Payé') cancel @elseif($reservation->facture->statut_facture->Intitule == 'En Attente de Payement' || $reservation->facture->statut_facture->Intitule == 'Partiellement Payé') in_progress @endif ">
+                            {{ $reservation->facture->statut_facture->Intitule }}
+                        </td>
                         <td><i class="fas fa-eye"></i></td>
-                    </tr>
-                    <tr>
-                        <td>02.</td>
-                        <td>#JK589V80</td>
-                        <td>Hotel</td>
-                        <td>$754.00</td>
-                        <td class="complete">Completed</td>
-                        <td><i class="fas fa-eye"></i></td>
-                    </tr>
-                    <tr>
-                        <td>03.</td>
-                        <td>#JK589V80</td>
-                        <td>Hotel</td>
-                        <td>$754.00</td>
-                        <td class="complete">Completed</td>
-                        <td><i class="fas fa-eye"></i></td>
-                    </tr>
-                    <tr>
-                        <td>04.</td>
-                        <td>#JK589V80</td>
-                        <td>Hotel</td>
-                        <td>$754.00</td>
-                        <td class="complete">Completed</td>
-                        <td><i class="fas fa-eye"></i></td>
-                    </tr>
-                    <tr>
-                        <td>05.</td>
-                        <td>#JK589V80</td>
-                        <td>Hotel</td>
-                        <td>$754.00</td>
-                        <td class="cancele">Canceled</td>
-                        <td><i class="fas fa-eye"></i></td>
-                    </tr>
-                    <tr>
-                        <td>06.</td>
-                        <td>#JK589V80</td>
-                        <td>Hotel</td>
-                        <td>$754.00</td>
-                        <td class="complete">Completed</td>
-                        <td><i class="fas fa-eye"></i></td>
+                        @endforeach
+
                     </tr>
                 </tbody>
             </table>
         </div>
-    </div>
-    <div class="pagination_area">
-        <ul class="pagination">
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">«</span>
-                    <span class="sr-only">Previous</span>
-                </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">»</span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </li>
-        </ul>
     </div>
 </div>
 

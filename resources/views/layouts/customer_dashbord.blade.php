@@ -36,7 +36,7 @@
                                     class="{{ $activeSection == 'dashboard' ? 'active' : '' }}"><i
                                         class="fas fa-tachometer-alt"></i>Dashboard</a>
                             </li>
-                            <li class="dashboard_dropdown_button" id="dashboard_dropdowns">
+                            {{-- <li class="dashboard_dropdown_button" id="dashboard_dropdowns">
                                 <i class="fas fa-address-card"></i>My bookings
                                 <span> <i class="fas fa-angle-down"></i></span>
                                 <div class="booing_sidebar_dashboard" id="show_dropdown_item" style="display: none;">
@@ -55,8 +55,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </li>
-                            <li><a href="notification.html"><i class="fas fa-bell"></i>Notifications</a></li>
+                            </li> --}}
                             <li><a href="wallet.html"><i class="fas fa-wallet"></i>Wallet</a></li>
                             @endif
                             <li><a href="{{ route('show_profil') }}"

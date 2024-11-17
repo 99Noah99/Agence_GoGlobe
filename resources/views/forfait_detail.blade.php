@@ -10,8 +10,10 @@
                     <h2>Détail du forfait</h2>
                     <ul>
                         <li><a href="{{ route('show_accueil') }}">Accueil</a></li>
+                        <li><span><i class="fas fa-circle"></i></span><a href="{{ route('show_forfait') }}">Forfait</a>
+                        </li>
                         <li>
-                            <span><i class="fas fa-circle"></i></span> Forfait
+                            <span><i class="fas fa-circle"></i></span> Détail du forfait
                         </li>
                     </ul>
                 </div>
@@ -236,7 +238,6 @@
                             </p>
                             <ul>
                                 @foreach ($forfait->hebergement_forfait as $hebergement)
-                                {{-- {{ dd($hebergement->hebergement) }} --}}
                                 <li><i class="fas fa-circle"></i>{{ $hebergement->hebergement->Nom }}, {{
                                     $hebergement->hebergement->type_hebergement->Intitule }}</li>
                                 @endforeach
@@ -244,7 +245,7 @@
                         </div>
                     </div>
                     <div class="tour_details_boxed">
-                        <h3 class="heading_theme">Itinerary</h3>
+                        <h3 class="heading_theme">Etape de l'itinéraire</h3>
                         <div class="tour_details_boxed_inner">
                             <div class="accordion" id="accordionExample">
                                 @foreach ($forfait->etape_itineraires as $etape)
@@ -427,54 +428,11 @@
                             </div>
                         </div>
                         <div class="tour_select_offer_bar_bottom">
-                            <button class="btn btn_theme btn_md w-100" data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Réserver le
-                                forfait</button>
+                            <a href="{{ route('show_forfait_reservation', ['Id_Forfait' => $forfait->Id_Forfait]) }}"
+                                class="btn btn_theme btn_md w-100">Réserver le
+                                forfait</a>
                         </div>
                     </div>
-                    {{-- <div class="tour_detail_right_sidebar">
-                        <div class="tour_details_right_boxed">
-                            <div class="tour_details_right_box_heading">
-                                <h3>Super deluxe package</h3>
-                            </div>
-                            <div class="valid_date_area">
-                                <div class="valid_date_area_one">
-                                    <h5>Valid from</h5>
-                                    <p>01 Feb 2022</p>
-                                </div>
-                                <div class="valid_date_area_one">
-                                    <h5>Valid till</h5>
-                                    <p>15 Feb 2022</p>
-                                </div>
-                            </div>
-                            <div class="tour_package_details_bar_list">
-                                <h5>Package details</h5>
-                                <ul>
-                                    <li><i class="fas fa-circle"></i>Buffet breakfast as per the Itinerary</li>
-                                    <li><i class="fas fa-circle"></i>Visit eight villages showcasing Polynesian
-                                        culture
-                                    </li>
-                                    <li><i class="fas fa-circle"></i>Complimentary Camel safari, Bonfire,</li>
-                                    <li><i class="fas fa-circle"></i>All toll tax, parking, fuel, and driver
-                                        allowances
-                                    </li>
-                                    <li><i class="fas fa-circle"></i>Comfortable and hygienic vehicle</li>
-                                </ul>
-                            </div>
-                            <div class="tour_package_details_bar_price">
-                                <h5>Price</h5>
-                                <div class="tour_package_bar_price">
-                                    <h6><del>$ 35,500</del></h6>
-                                    <h3>$ 30,500 <sub>/Per serson</sub> </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tour_select_offer_bar_bottom">
-                            <button class="btn btn_theme btn_md w-100" data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Select
-                                offer</button>
-                        </div>
-                    </div> --}}
                 </div>
             </div>
         </div>

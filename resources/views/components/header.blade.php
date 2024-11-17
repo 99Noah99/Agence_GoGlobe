@@ -83,7 +83,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="{{ route('show_all_forfait') }}" class="nav-link"> Tout les forfaits
+                                        <a href="{{ route('show_forfait') }}" class="nav-link"> Tout les forfaits
                                         </a>
                                         {{-- <ul class="dropdown-menu">
                                             <li class="nav-item">
