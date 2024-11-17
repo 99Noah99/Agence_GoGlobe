@@ -7,10 +7,10 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="common_bannner_text">
-                    <h2>Customer dashboard</h2>
+                    <h2>Profil</h2>
                     <ul>
-                        <li><a href="{{ route ('show_accueil') }}">Home</a></li>
-                        <li><span><i class="fas fa-circle"></i></span>Customer dashboard</li>
+                        <li><a href="{{ route ('show_accueil') }}">Accueil</a></li>
+                        <li><span><i class="fas fa-circle"></i></span>Informations sur votre profil</li>
                     </ul>
                 </div>
             </div>
@@ -22,7 +22,7 @@
 <section id="dashboard_main_arae" class="section_padding">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="dashboard_sidebar">
                     <div class="dashboard_sidebar_user">
                         <h3>{{ $current_user->Prenom. " " . $current_user->Nom }}</h3>
@@ -56,7 +56,6 @@
                                     </ul>
                                 </div>
                             </li> --}}
-                            <li><a href="wallet.html"><i class="fas fa-wallet"></i>Wallet</a></li>
                             @endif
                             <li><a href="{{ route('show_profil') }}"
                                     class="{{ $activeSection == 'profile' ? 'active' : '' }}"><i

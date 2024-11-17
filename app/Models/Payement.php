@@ -15,4 +15,14 @@ class Payement extends Model
     {
         return $this->belongsTo(Facture::class, 'Id_Facture', 'Id_Facture');
     }
+
+    public function type_payement()
+    {
+        return $this->belongsTo(TypePayement::class, 'Id_Type_Payement', 'Id_Type_Payement');
+    }
+
+    public function statut_payement()
+    {
+        return $this->belongsTo(StatutPayement::class, 'Id_Statut_Payement', 'Id_Statut_Payement');
+    }
 }

@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('payement__facture', function (Blueprint $table) {
             $table->id('Id_Facture');
             $table->string('Intitule', 255);
-            $table->decimal('Montant', 7, 2);
+            $table->decimal('Montant', 6, 2);
+            $table->decimal('Restant_payer', 6, 2);
             $table->string('Fichier', 255);
             $table->date('Date_creation');
             $table->unsignedBigInteger('Id_Statut_Facture');

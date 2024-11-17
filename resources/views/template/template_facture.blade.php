@@ -26,9 +26,11 @@
 
 <body>
     <h1>Facture</h1>
-    <p><strong>Intitulé :</strong> {{ $intitule }}</p>
+    <p><strong>reservation du forfait n°{{$Id_Forfait}}</p>
+    <p><strong>Du : </strong> {{$date_debut}} <strong> Au : </strong>{{$date_fin}}</p>
+    <p><strong>Facture de reservation pour forfait : </strong> {{ $intitule }}</p>
     <p><strong>Montant :</strong> {{ number_format($montant, 2, ',', ' ') }} €</p>
-    <p><strong>Date de création :</strong> {{ $date_creation }}</p>
+    <p><strong>Forfait réserver le :</strong> {{ $date_creation }}</p>
 </body>
 
 </html>

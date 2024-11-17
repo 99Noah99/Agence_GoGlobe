@@ -41,8 +41,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/forfait/detail/{Id_Forfait}', [ForfaitController::class, 'show_forfait_detail'])->name('show_forfait_detail');
     Route::get('/forfait/reservation/{Id_Forfait}', [ForfaitController::class, 'show_forfait_reservation'])->name('show_forfait_reservation');
     Route::post('/forfait/reservation', [ForfaitController::class, 'create_forfait_reservation'])->name('create_forfait_reservation');
-
-
+    Route::get('/forfait/reservation/{Id_Reservation}/payement', [ForfaitController::class, 'show_forfait_reservation_payement'])->name('show_forfait_reservation_payement');
+    Route::post('/forfait/reservation/payement', [ForfaitController::class, 'create_forfait_reservation_payement'])->name('create_forfait_reservation_payement');
+    Route::get('/forfait/reservation/facture/telecharger/{Id_Facture}', [ForfaitController::class, 'telecharger_facture'])->name('telecharger_facture');
 
     // --------------------------     Route pour admin
     Route::middleware('CheckRole:admin')->group(function () {

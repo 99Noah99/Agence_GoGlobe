@@ -5340,8 +5340,47 @@ textarea {
     display: flex;
     justify-content: space-between;
 }
-
 .dashboard_price_range {
+    padding-top: 30px;
+}
+
+.main_range_price {
+    height: 13px;
+    width: 100% !important;
+    background: #66666652;
+    border-radius: 40px;
+    font-size: 10px;
+    line-height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.main_range_price::after {
+    content: attr(data-progress) "%";
+    width: var(--progress);
+    background: var(--main-color);
+    height: 13px;
+    position: absolute;
+    border-radius: 30px;
+    text-align: right;
+    color: #fff;
+    padding: 0 22px;
+    line-height: 12px;
+    transition: width 0.4s ease-in-out;
+}
+
+.price_range_blance {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price_range_blance p {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* .dashboard_price_range {
     padding-top: 30px;
 }
 
@@ -5378,7 +5417,7 @@ textarea {
 .price_range_blance p {
     font-size: 12px;
     font-weight: 600;
-}
+} */
 
 .add_balance_area {
     padding-top: 30px;
