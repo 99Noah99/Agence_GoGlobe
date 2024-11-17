@@ -11,7 +11,7 @@ class Forfait extends Model
 
     protected $guarded = [];
 
-    public function deplacerMoyensTransport()
+    public function deplacer_moyens_transport()
     {
         return $this->hasMany(DeplacerMoyenTransport::class, 'Id_Forfait', 'Id_Forfait');
     }
@@ -21,7 +21,7 @@ class Forfait extends Model
         return $this->belongsTo(CategorieClientForfait::class, 'Id_Categorie_Client_Forfait', 'Id_Categorie_Client_Forfait');
     }
 
-    public function etapeItineraires()
+    public function etape_itineraires()
     {
         return $this->hasMany(EtapeItineraire::class, 'Id_Forfait', 'Id_Forfait');
     }
@@ -31,7 +31,7 @@ class Forfait extends Model
         return $this->belongsTo(TypeForfaitVoyage::class, 'Id_Type_Forfait_Voyage', 'Id_Type_Forfait_Voyage');
     }
 
-    public function hebergementForfait()
+    public function hebergement_forfait()
     {
         return $this->hasMany(HebergementForfait::class, 'Id_Forfait', 'Id_Forfait');
     }

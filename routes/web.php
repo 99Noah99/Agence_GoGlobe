@@ -37,7 +37,8 @@ Route::middleware('auth')->group(function () {
 
 
     // Route forfait
-    Route::get('/forfait', [ForfaitController::class, 'show_all_forfait'])->name('show_all_forfait');
+    Route::get('/forfaits', [ForfaitController::class, 'show_all_forfait'])->name('show_all_forfait');
+    Route::get('/forfait/detail/{Id_Forfait}', [ForfaitController::class, 'show_forfait_detail'])->name('show_forfait_detail');
 
 
 

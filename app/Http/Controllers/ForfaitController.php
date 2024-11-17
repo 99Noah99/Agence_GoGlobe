@@ -22,6 +22,13 @@ class ForfaitController extends Controller
         } else {
             $donnee_forfait = $query->where('Id_Categorie_Client_Forfait', Auth::user()->client->categorie_client_forfait->Id_Categorie_Client_Forfait)->get();
         }
-        return view('forfait', ['donnee_forfait' => $donnee_forfait]);
+        return view('forfaits', ['donnee_forfait' => $donnee_forfait]);
+    }
+
+
+    public function show_forfait_detail($Id_Forfait)
+    {
+        $forfait = Forfait::find($Id_Forfait);
+        return view('forfait_detail', ['forfait' => $forfait]);
     }
 }

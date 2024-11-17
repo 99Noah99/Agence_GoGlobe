@@ -13,6 +13,6 @@ class HebergementForfait extends Model
 
     public function hebergement()
     {
-        return $this->hasOne(Hebergement::class, 'Id_Hebergement', 'Id_Hebergement ');
+        return $this->belongsTo(Hebergement::class, 'Id_Hebergement', 'Id_Hebergement');
     }
 }

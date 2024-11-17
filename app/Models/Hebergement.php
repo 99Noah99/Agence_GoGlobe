@@ -15,4 +15,9 @@ class Hebergement extends Model
     {
         return $this->belongsTo(Ville::class, 'Id_Ville', 'Id_Ville');
     }
+
+    public function type_hebergement()
+    {
+        return $this->belongsTo(TypeHebergement::class, 'Id_Type_Hebergement', 'Id_Type_Hebergement');
+    }
 }

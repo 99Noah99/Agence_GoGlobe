@@ -314,8 +314,8 @@
                     <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                         <div class="theme_common_box_two img_hover">
                             <div class="theme_two_box_img">
-                                <a href="tour-details.html"><img src="/storage/forfait/{{ $forfait->Image }}"
-                                        alt="img"></a>
+                                <a href="{{ route('show_forfait_detail', ['Id_Forfait' => $forfait->Id_Forfait]) }}"><img
+                                        src="/storage/forfait/{{ $forfait->Image }}" alt="img"></a>
                                 <p><i class="fas fa-map-marker-alt"></i>{{ $forfait->ville->Nom }}, {{
                                     $forfait->ville->region->pays->Nom }}</p>
                             </div>

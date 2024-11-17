@@ -41,7 +41,6 @@ return [
             'driver' => 'local',
             'root' => storage_path('app/img/hebergement'),
             'url' => env('APP_URL') . '/storage/app/img/hebergement',
-            'throw' => false,
             'visibility' => 'public',
         ],
 
@@ -89,6 +88,7 @@ return [
     'links' => [
         public_path('storage') => storage_path('app/public'),
         public_path('storage/forfait') => storage_path('app/img/forfait'),
+        public_path('storage/hebergement') => storage_path('app/img/hebergement'),
     ],
 
 ];

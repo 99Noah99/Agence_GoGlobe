@@ -11,8 +11,8 @@ class DeplacerMoyenTransport extends Model
 
     protected $guarded = [];
 
-    public function moyenTransport()
+    public function moyen_transport()
     {
-        return $this->hasOne(MoyenTransport::class, 'Id_Moyen_Transport', 'Id_Moyen_Transport ');
+        return $this->belongsTo(MoyenTransport::class, 'Id_Moyen_Transport', 'Id_Moyen_Transport');
     }
 }
