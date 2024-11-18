@@ -25,6 +25,8 @@ class DatabaseSeeder extends Seeder
             StatutFactureSeeder::class,
             AdminSeeder::class,
             LocalisationSeeder::class,
+            UsersTableSeeder::class,
+            ClientTableSeeder::class
         ]);
     }
 }
