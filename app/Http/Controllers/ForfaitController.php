@@ -23,22 +23,32 @@ class ForfaitController extends Controller
             $query = Forfait::query();
 
             if (isset($request->search)) {
-                $donnee_forfait = $query->where('Intitule', 'like', '%' . $request->search . '%')->get();
+                $query->where('Intitule', 'like', '%' . $request->search . '%')->get();
             } else if (isset($request->ville) && isset($request->duree)) {
-                $donnee_forfait = $query->whereHas('ville', function ($q) {
+                $query->whereHas('ville', function ($q) {
                     $q->where('Nom', 'like', '%' . request()->ville . '%');
                 })->where('Duree', request()->duree)->get();
             }
 
-            if (Auth::user()->client->categorie_client_forfait->Id_Categorie_Client_Forfait == 1) {
-                $donnee_forfait = $query->all();
-            } else {
-                $donnee_forfait = $query->where('Id_Categorie_Client_Forfait', Auth::user()->client->categorie_client_forfait->Id_Categorie_Client_Forfait)->get();
+            // if (Auth::user()->client->categorie_client_forfait->Id_Categorie_Client_Forfait == 1) {
+            //     $donnee_forfait = $query->get();
+            // } else {
+            //     $donnee_forfait = $query->where('Id_Categorie_Client_Forfait', Auth::user()->client->categorie_client_forfait->Id_Categorie_Client_Forfait)->get();
+            // }
+
+            // Appliquer la contrainte de catégorie client
+            if (Auth::user()->client->categorie_client_forfait->Id_Categorie_Client_Forfait != 1) {
+                $query->where('Id_Categorie_Client_Forfait', Auth::user()->client->categorie_client_forfait->Id_Categorie_Client_Forfait);
             }
+
+            // Exécuter la requête finale
+            $donnee_forfait = $query->get();
+
             return view('forfaits', ['donnee_forfait' => $donnee_forfait]);
         } catch (ValidationException $e) {
             return redirect()->back()->withErrors($e->validator)->withInput();
         } catch (\Exception $e) {
+            dd($e);
             return redirect()->back()->with('error', 'Une erreur est survenue lors de la récupération des forfaits. Veuillez réessayer plus tard.');
         }
     }
