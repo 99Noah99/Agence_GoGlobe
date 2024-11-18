@@ -19,19 +19,28 @@ class ForfaitController extends Controller
 {
     public function show_forfait(Request $request)
     {
-        $query = Forfait::query();
-        if (isset($request->ville) && isset($request->duree)) {
-            $donnee_forfait = $query->whereHas('ville', function ($q) {
-                $q->where('Nom', request()->ville);
-            })->where('Duree', request()->duree)->get();
-        }
+        try {
+            $query = Forfait::query();
 
-        if (Auth::user()->client->categorie_client_forfait->Id_Categorie_Client_Forfait == 1) {
-            $donnee_forfait = $query->all();
-        } else {
-            $donnee_forfait = $query->where('Id_Categorie_Client_Forfait', Auth::user()->client->categorie_client_forfait->Id_Categorie_Client_Forfait)->get();
+            if (isset($request->search)) {
+                $donnee_forfait = $query->where('Intitule', 'like', '%' . $request->search . '%')->get();
+            } else if (isset($request->ville) && isset($request->duree)) {
+                $donnee_forfait = $query->whereHas('ville', function ($q) {
+                    $q->where('Nom', request()->ville);
+                })->where('Duree', request()->duree)->get();
+            }
+
+            if (Auth::user()->client->categorie_client_forfait->Id_Categorie_Client_Forfait == 1) {
+                $donnee_forfait = $query->all();
+            } else {
+                $donnee_forfait = $query->where('Id_Categorie_Client_Forfait', Auth::user()->client->categorie_client_forfait->Id_Categorie_Client_Forfait)->get();
+            }
+            return view('forfaits', ['donnee_forfait' => $donnee_forfait]);
+        } catch (ValidationException $e) {
+            return redirect()->back()->withErrors($e->validator)->withInput();
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Une erreur est survenue lors de la récupération des forfaits. Veuillez réessayer plus tard.');
         }
-        return view('forfaits', ['donnee_forfait' => $donnee_forfait]);
     }
 
 
