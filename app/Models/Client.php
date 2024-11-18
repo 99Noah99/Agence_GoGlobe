@@ -58,6 +58,26 @@ class Client extends Model
         return $this->hasMany(AvisHebergement::class, 'Id_Client', 'Id_Client');
     }
 
+    public function avis_voiture()
+    {
+        return $this->hasMany(AvisVoiture::class, 'Id_Client', 'Id_Client');
+    }
+
+    public function avis_bus()
+    {
+        return $this->hasMany(AvisBus::class, 'Id_Client', 'Id_Client');
+    }
+
+    public function avis_train()
+    {
+        return $this->hasMany(AvisTrain::class, 'Id_Client', 'Id_Client');
+    }
+
+    public function avis_avion()
+    {
+        return $this->hasMany(AvisAvion::class, 'Id_Client', 'Id_Client');
+    }
+
     public function reserver_chambre()
     {
         return $this->hasMany(ReserverChambre::class, 'Id_Client', 'Id_Client');

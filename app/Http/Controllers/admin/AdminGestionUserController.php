@@ -10,6 +10,7 @@ use App\Models\Client;
 use App\Models\Facture;
 use Illuminate\Support\Facades\DB;
 use Exception;
+use Illuminate\Support\Facades\Storage;
 
 
 class AdminGestionUserController extends Controller
@@ -30,48 +31,72 @@ class AdminGestionUserController extends Controller
 
             // Supprimer les factures associées aux billets de bus
             foreach ($client->billet_bus as $billetBus) {
+                $billetBus->delete(); // Supprimer ensuite le billet de bus
                 if ($billetBus->facture) {
                     $this->deleteFactureWithPayments($billetBus->facture);
                 }
-                $billetBus->delete(); // Supprimer ensuite le billet de bus
             }
 
             // Supprimer les factures associées aux billets de train
             foreach ($client->billet_train as $billetTrain) {
+                $billetTrain->delete(); // Supprimer ensuite le billet de train
                 if ($billetTrain->facture) {
                     $this->deleteFactureWithPayments($billetTrain->facture);
                 }
-                $billetTrain->delete(); // Supprimer ensuite le billet de train
             }
 
             // Supprimer les factures associées aux billets d'avion
             foreach ($client->billet_avion as $billetAvion) {
+                $billetAvion->delete(); // Supprimer ensuite le billet d'avion
                 if ($billetAvion->facture) {
                     $this->deleteFactureWithPayments($billetAvion->facture);
                 }
-                $billetAvion->delete(); // Supprimer ensuite le billet d'avion
             }
 
             // Supprimer les réservations de voitures, forfaits, chambres, etc.
             foreach ($client->reserver_voiture as $reservation) {
+                $reservation->delete();
                 if ($reservation->facture) {
                     $this->deleteFactureWithPayments($reservation->facture);
                 }
-                $reservation->delete();
             }
 
             foreach ($client->reserver_forfait as $forfait) {
+                $forfait->delete();
                 if ($forfait->facture) {
                     $this->deleteFactureWithPayments($forfait->facture);
                 }
-                $forfait->delete();
             }
 
             foreach ($client->reserver_chambre as $chambre) {
+                $chambre->delete();
                 if ($chambre->facture) {
                     $this->deleteFactureWithPayments($chambre->facture);
                 }
-                $chambre->delete();
+            }
+
+            foreach ($client->avis_forfait as $avis) {
+                $avis->delete();
+            }
+
+            foreach ($client->avis_hebergement as $avis) {
+                $avis->delete();
+            }
+
+            foreach ($client->avis_voiture as $avis) {
+                $avis->delete();
+            }
+
+            foreach ($client->avis_bus as $avis) {
+                $avis->delete();
+            }
+
+            foreach ($client->avis_train as $avis) {
+                $avis->delete();
+            }
+
+            foreach ($client->avis_avion as $avis) {
+                $avis->delete();
             }
 
             // Supprimer l'utilisateur associé au client
@@ -79,10 +104,10 @@ class AdminGestionUserController extends Controller
 
             // Supprimer enfin le client
             $client->delete();
-
             DB::commit();
             return redirect()->route('show_admin_all_user')->with('success', 'Client supprimé avec succès');
         } catch (Exception $e) {
+            dd($e);
             DB::rollBack();
             return redirect()->route('show_admin_all_user')->with('error', 'Erreur lors de la suppression');
         }
@@ -141,6 +166,9 @@ class AdminGestionUserController extends Controller
             $payement->delete();
         }
 
+        if (Storage::disk('facture')->exists($facture->Fichier)) {
+            Storage::disk('facture')->delete($facture->Fichier);
+        }
         // Supprimer la facture
         $facture->delete();
     }

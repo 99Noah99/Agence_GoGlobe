@@ -24,10 +24,6 @@
                         <div class="text-15 lh-14 text-light-1 mt-5 text_green">(+2.35%) <span><i
                                     class="fas fa-arrow-up"></i></span></div>
                     </div>
-
-                    <div class="col-md-6">
-                        <img src="img/dashboard/icons/arrow-1.png" alt="icon">
-                    </div>
                 </div>
             </div>
         </div>
@@ -40,10 +36,6 @@
                         <div class="text-30 lh-16 fw-600 mt-5 text_oreng">$14,200</div>
                         <div class="text-15 lh-14 text-light-1 mt-5 text_green">(+2.35%) <span><i
                                     class="fas fa-arrow-up"></i></span></div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <img src="img/dashboard/icons/arrow-2.png" alt="icon">
                     </div>
                 </div>
             </div>
@@ -58,10 +50,6 @@
                         <div class="text-15 lh-14 text-light-1 mt-5 text_red">(+2.35%) <span><i
                                     class="fas fa-arrow-up"></i></span></div>
                     </div>
-
-                    <div class="col-md-6">
-                        <img src="img/dashboard/icons/arrow-3.png" alt="icon">
-                    </div>
                 </div>
             </div>
         </div>
@@ -74,10 +62,6 @@
                         <div class="text-30 lh-16 fw-600 mt-5 text_green">22,786</div>
                         <div class="text-15 lh-14 text-light-1 mt-5 text_green">(+2.35%) <span><i
                                     class="fas fa-arrow-up"></i></span></div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <img src="img/dashboard/icons/arrow-4.png" alt="icon">
                     </div>
                 </div>
             </div>

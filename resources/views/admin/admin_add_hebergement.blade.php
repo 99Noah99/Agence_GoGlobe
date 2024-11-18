@@ -46,7 +46,7 @@
                                 <div class="col-6">
                                     <div class="form-input ">
                                         <label class="lh-1 text-16 text-light-1">Nom</label>
-                                        <input type="text" name="Nom" placeholder="Nom de l'hôtel" required>
+                                        <input type="text" name="Nom" placeholder="Nom de l'hébergement" required>
                                     </div>
                                 </div>
                                 <div class="col-6">
@@ -67,7 +67,7 @@
                                     <div class="form-input">
                                         <label class="lh-1 text-16 text-light-1">Description</label>
                                         <textarea name="Description" rows="5" required
-                                            placeholder="Description de l'hôtel"></textarea>
+                                            placeholder="Description de l'hébergement"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -75,29 +75,8 @@
                             <div class="mt-30">
                                 <div class="fw-500">Images</div>
 
-                                {{-- <div class="row x-gap-20 y-gap-20 pt-15">
-                                    <div class="col-auto">
-                                        <div class="w-200">
-                                            <div class="d-flex ratio ratio-1:1">
-                                                <div id="upload-area" style="cursor: pointer;"
-                                                    class="flex-center flex-column text-center bg-blue-2 h-full w-1/1 absolute rounded-4 border-type-1">
-                                                    <div> <i class="fa-solid fa-image fa-2xl"></i> </div>
-                                                    <div class="text-blue-1 fw-500">Upload Images</div>
-                                                    <img id="image-preview" src="#" alt="Aperçu de l'image"
-                                                        style="display: none; max-width: 200px;" />
-                                                </div>
-                                                <!-- Champ input caché -->
-                                                <input type="file" name="Image" id="image-input" accept="image/*"
-                                                    style="display: none;" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>--}}
                                 <div class="col-6">
-                                    {{-- <div class="form-input"> --}}
-                                        <input type="file" name="image" class="form-control" accept="image/*" required>
-                                        {{--
-                                    </div> --}}
+                                    <input type="file" name="image" class="form-control" accept="image/*" required>
                                 </div>
                             </div>
 

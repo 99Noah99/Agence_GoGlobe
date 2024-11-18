@@ -22,4 +22,9 @@ class Facture extends Model
     {
         return $this->hasMany(Payement::class, 'Id_Facture', 'Id_Facture');
     }
+
+    public function reservation_forfait()
+    {
+        return $this->hasOne(ReserverForfait::class, 'Id_Facture', 'Id_Facture');
+    }
 }

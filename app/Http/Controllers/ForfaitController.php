@@ -26,7 +26,7 @@ class ForfaitController extends Controller
                 $donnee_forfait = $query->where('Intitule', 'like', '%' . $request->search . '%')->get();
             } else if (isset($request->ville) && isset($request->duree)) {
                 $donnee_forfait = $query->whereHas('ville', function ($q) {
-                    $q->where('Nom', request()->ville);
+                    $q->where('Nom', 'like', '%' . request()->ville . '%');
                 })->where('Duree', request()->duree)->get();
             }
 
